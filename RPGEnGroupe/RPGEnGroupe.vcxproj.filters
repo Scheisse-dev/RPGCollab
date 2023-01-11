@@ -57,10 +57,13 @@
     <ClCompile Include="Chest\Chest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RPG\Menu\RPG_MainMenu.cpp">
+    <ClCompile Include="UI\RPG_UIElement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Window\BaseMenu\BaseMenu.cpp">
+    <ClCompile Include="UI\Manager\UIElementManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RPG_Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -104,16 +107,19 @@
     <ClInclude Include="Chest\Chest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPG\DataBase\DataBase.h">
+    <ClInclude Include="DataBase\DataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Time\Time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPG\Menu\RPG_MainMenu.h">
+    <ClInclude Include="UI\RPG_UIElement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Window\BaseMenu\BaseMenu.h">
+    <ClInclude Include="UI\Manager\UIElementManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RPG_Image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
