@@ -69,5 +69,6 @@ void RPG_Game::InitMenus()
 }
 void RPG_Game::OnReceiveEvent(const sf::Event& _event)
 {
+	Window::OnReceiveEvent(_event);
 }
 #pragma endregion
