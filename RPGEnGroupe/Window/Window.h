@@ -42,3 +42,4 @@ protected:
 	virtual void OnUpdate() = 0;
 	virtual void OnReceiveEvent(const sf::Event& _event);
 #pragma endregion
+};
