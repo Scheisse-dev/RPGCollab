@@ -1,48 +1,73 @@
 #include "Window.h"
-#include <SFML/Graphics.hpp>
+#include "../Time/Time.h"
+#include "../DataBase/DataBase.h"
+//#include "../Event/Event.h"
 
 #pragma region constructor
-Window::Window()
+Window::Window(const char* _title)
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-
-		window.clear();
-		window.draw(shape);
-		window.display();
-	}
+	title = _title;
 }
 Window::~Window()
 {
+	Close();
+	delete window;
 }
 #pragma endregion
 
 #pragma region methods
+void Window::Update()
+{
+	sf::Event _event = sf::Event();
+	sf::Clock _clock = sf::Clock();
+	while (window->isOpen())
+	{
+		Time::deltaTime = _clock.restart().asSeconds();
+		while (window->pollEvent(_event))
+		{
+			if (!window->hasFocus() && !eventIfNotFocus)
+				continue;
+			Event::currentEvent = &_event;
+			OnReceiveEvent(_event);
+			break;
+		}
+		OnUpdate();
+		window->clear();
+		OnDraw();
+		window->display();
+	}
+}
 void Window::Open()
 {
+	window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), title);
+	Update();
 }
 void Window::Close()
 {
+	if (!window->isOpen())
+		return;
+	window->close();
 }
 bool Window::IsOpen()
 {
-	return false;
+	return window->isOpen();
 }
-void Window::OnDraw()
+bool Window::HasFocus()
 {
+	return window->hasFocus();
 }
-void Window::OnUpdate()
+void Window::SetFrameLimit(const int _frame)
 {
+	window->setFramerateLimit(_frame);
+}
+void Window::Draw(sf::Drawable* _drawable)
+{
+	window->draw(*_drawable);
+}
+void Window::OnReceiveEvent(const sf::Event& _event)
+{
+	if (_event.type == sf::Event::Closed)
+		Close();
 }
 #pragma endregion
 
