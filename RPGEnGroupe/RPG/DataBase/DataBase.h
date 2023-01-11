@@ -5,3 +5,6 @@
 
 #define SAMUS "../Donnees/Samus.png"
 
+
+#define LABEL_FONT ""
+

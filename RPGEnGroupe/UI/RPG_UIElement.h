@@ -13,6 +13,7 @@ protected:
 #pragma endregion f/P
 #pragma region constructor
 public:
+	RPG_UIElement() = default;
 	RPG_UIElement(Window* _owner);
 	RPG_UIElement(const RPG_UIElement& _copy);
 	~RPG_UIElement() override;
