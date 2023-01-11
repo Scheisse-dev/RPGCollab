@@ -57,6 +57,12 @@
     <ClCompile Include="Chest\Chest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RPG\Menu\RPG_MainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\BaseMenu\BaseMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -98,10 +104,16 @@
     <ClInclude Include="Chest\Chest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataBase\DataBase.h">
+    <ClInclude Include="RPG\DataBase\DataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Time\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RPG\Menu\RPG_MainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\BaseMenu\BaseMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

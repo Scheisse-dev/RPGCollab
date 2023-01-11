@@ -4,6 +4,7 @@
 
 class Event : public Object
 {
+public:
 	static inline sf::Event* currentEvent = nullptr;
 
 };

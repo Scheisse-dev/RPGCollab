@@ -134,11 +134,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Window\BaseMenu\BaseMenu.cpp" />
     <ClCompile Include="Chest\Chest.cpp" />
     <ClCompile Include="Entity\Entity.cpp" />
     <ClCompile Include="Inventory\Inventory.cpp" />
     <ClCompile Include="Item\Gold\Gold.cpp" />
     <ClCompile Include="Entity\Mob\Mob.cpp" />
+    <ClCompile Include="RPG\Menu\RPG_MainMenu.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Item\Potion\Mana\PotionMana.cpp" />
     <ClCompile Include="Item\Potion\Heal\PotionHeal.cpp" />
@@ -150,12 +152,14 @@
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Window\BaseMenu\BaseMenu.h" />
     <ClInclude Include="Chest\Chest.h" />
-    <ClInclude Include="DataBase\DataBase.h" />
+    <ClInclude Include="RPG\DataBase\DataBase.h" />
     <ClInclude Include="Entity\Entity.h" />
     <ClInclude Include="Inventory\Inventory.h" />
     <ClInclude Include="Item\Gold\Gold.h" />
     <ClInclude Include="Entity\Mob\Mob.h" />
+    <ClInclude Include="RPG\Menu\RPG_MainMenu.h" />
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Item\Potion\Mana\PotionMana.h" />
     <ClInclude Include="Item\Potion\Heal\PotionHeal.h" />
