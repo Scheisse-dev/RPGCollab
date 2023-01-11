@@ -1,42 +1,47 @@
 #pragma once
 #include "../../Object/Object.h"
+#include <windows.h>
+#include <exception>
 
-template<typename Res, typename... Args>
-class Delegate
+
+template <typename Res, typename... Params>
+class Delegate : public Object
 {
-#pragma f/p
-private:
-	typedef Res(Object::* Function)(Args...);
+#pragma region f/p
+public:
+	typedef Res(Object::* Function) (Params...);
 	Function function = nullptr;
-	Object instance = nullptr;
+	Object* instance = nullptr;
 #pragma endregion f/p
 #pragma region constructor
 public:
 	Delegate(nullptr_t)
 	{
+		function = nullptr;
 		instance = nullptr;
-		function = nullptr; 
 	}
 	Delegate(const Delegate& _copy)
 	{
-		instance = _copy.instance; 
 		function = _copy.function;
+		instance = _copy.instance;
 	}
 	template<typename Class>
-	Delegate(Res(Class::* ptr)(Args...))
+	Delegate(Class* _instance, Res(Class::* ptr)(Params...))
 	{
 		if constexpr (!std::is_base_of_v<Object, Class>)
 			throw std::exception("Class must be inherited of Object");
 		instance = _instance;
 		function = reinterpret_cast<Function>(ptr);
 	}
-	~Delegate()
-	{
-
-	};
 #pragma endregion constructor
 #pragma region methods
 public:
+
+	bool IsValid() const
+	{
+		return instance != nullptr && function != nullptr;
+	}
+
 	template<typename Class>
 	void SetDynamic(Class* _instance, Res(Class::* ptr) (Params...))
 	{
@@ -58,14 +63,16 @@ public:
 #pragma endregion methods
 #pragma region operator
 public:
+	template<typename Class>
 	void operator=(const Delegate& other)
 	{
-		instance = instance.other;
-		function = function.other;
+		instance = other.instance;
+		function = other.function;
 	}
+
 	void operator=(nullptr_t)
 	{
-		instance = nullptr; 
+		instance = nullptr;
 		function = nullptr;
 	}
 #pragma endregion operator

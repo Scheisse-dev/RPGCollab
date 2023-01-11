@@ -63,9 +63,6 @@
     <ClCompile Include="UI\Manager\UIElementManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RPG_Image.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Window\BaseMenu\BaseMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -76,6 +73,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UI\Image\RPG_Image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Event\Input\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RPG\Menu\RPG_MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -131,9 +134,6 @@
     <ClInclude Include="UI\Manager\UIElementManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPG_Image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Singleton\Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -150,6 +150,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UI\Image\RPG_Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Event\Delegate\Delegate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Event\Input\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RPG\Menu\RPG_MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
