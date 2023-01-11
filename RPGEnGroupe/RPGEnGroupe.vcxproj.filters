@@ -18,9 +18,15 @@
     <ClCompile Include="RPGEnGroupe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Event\Input\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Event\Input\Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

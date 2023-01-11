@@ -134,10 +134,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Event\Input\Input.cpp" />
     <ClCompile Include="RPGEnGroupe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event\Event.h" />
+    <ClInclude Include="Event\Input\Input.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
