@@ -72,6 +72,9 @@
     <ClCompile Include="UI\Label\RPG_Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RPG\Menu\RPG_MainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -135,6 +138,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UI\Label\RPG_Label.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RPG\Menu\RPG_MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
