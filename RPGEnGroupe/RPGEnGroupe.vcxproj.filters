@@ -90,6 +90,9 @@
     <ClCompile Include="RPG\GameObject\Manager\RPG_GameObjectManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RPG\Samus\RPG_Samus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -177,6 +180,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RPG\GameObject\Manager\RPG_GameObjectManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RPG\Samus\RPG_Samus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

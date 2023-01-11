@@ -2,7 +2,7 @@
 
 
 #pragma region methods
-bool Input::isKeyDown(const sf::Keyboard::Key& _key)
+bool Input::IsKeyDown(const sf::Keyboard::Key& _key)
 {
 	const sf::Event* _current = Event::currentEvent;
 	if (_current == nullptr) return false;
@@ -11,13 +11,13 @@ bool Input::isKeyDown(const sf::Keyboard::Key& _key)
 
 }
 
-bool Input::isKeyUp(const sf::Keyboard::Key& _key)
+bool Input::IsKeyUp(const sf::Keyboard::Key& _key)
 {
 	const sf::Event* _current = Event::currentEvent;
 	if (_current == nullptr) return false;
 	return _current->key.code == _key && _current->type == sf::Event::KeyReleased;
 }
-bool Input::mouseIsClicked(const sf::Mouse::Button& _button)
+bool Input::MouseIsClicked(const sf::Mouse::Button& _button)
 {
 	const sf::Event* _current = Event::currentEvent;
 	if (_current == nullptr) return false;

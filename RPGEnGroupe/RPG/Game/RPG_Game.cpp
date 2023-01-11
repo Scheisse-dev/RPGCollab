@@ -3,6 +3,7 @@
 #include "../../UI/Button/RPG_Button.h"
 #include "../../UI/image/RPG_Image.h"
 #include "../GameObject/Manager/RPG_GameObjectManager.h"
+#include "../Samus/RPG_Samus.h"
 #include "../DataBase/DataBase.h"
 #include <iostream>
 
@@ -24,6 +25,8 @@ void RPG_Game::Start()
 	RPG_GameObjectManager::Instance()->DestroyAllObjects();
 	CloseAllMenus();
 	isStarted = true;
+	samus = new RPG_Samus();
+	samus->SetWindowSize(sf::Vector2f(WIDTH, HEIGHT));
 }
 void RPG_Game::InitBackGround()
 {

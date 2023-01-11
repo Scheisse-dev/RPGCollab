@@ -10,9 +10,9 @@ private:
 #pragma endregion constructor
 #pragma region methods
 public:
-	static bool isKeyDown(const sf::Keyboard::Key& _key);
-	static bool isKeyUp(const sf::Keyboard::Key& _key);
-	static bool mouseIsClicked(const sf::Mouse::Button& _button);
+	static bool IsKeyDown(const sf::Keyboard::Key& _key);
+	static bool IsKeyUp(const sf::Keyboard::Key& _key);
+	static bool MouseIsClicked(const sf::Mouse::Button& _button);
 #pragma endregion methods
 };
 

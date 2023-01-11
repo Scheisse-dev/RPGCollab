@@ -7,6 +7,7 @@ class RPG_Game : public Window
 private:
 	bool isStarted = false;
 	class RPG_Image* background = nullptr;
+	class RPG_Samus* samus = nullptr;
 #pragma endregion
 #pragma region constructor
 public:
