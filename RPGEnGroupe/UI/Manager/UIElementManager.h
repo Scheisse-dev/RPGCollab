@@ -1,5 +1,5 @@
 #pragma once
-#include "../Singleton/Singleton.h"
+#include "../../Singleton/Singleton.h"
 #include <vector>
 
 class RPG_UIElement;
@@ -11,12 +11,12 @@ private:
 	std::vector<RPG_UIElement*> elements = std::vector<RPG_UIElement*>();
 #pragma endregion f/p
 #pragma region constructor/destructor
-public:
-UIElementManager() = default;
+	public:
+		UIElementManager() = default;
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
-void Register(RPG_UIElement* _element);
+	void Register(RPG_UIElement* _element);
 	void Unregister(RPG_UIElement* _element);
 	void Update();
 #pragma endregion methods
