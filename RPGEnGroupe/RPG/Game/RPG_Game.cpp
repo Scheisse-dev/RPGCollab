@@ -2,7 +2,7 @@
 #include "../Menu/RPG_MainMenu.h"
 #include "../../UI/Button/RPG_Button.h"
 #include "../../UI/image/RPG_Image.h"
-//#include "../Manager/FB_GameObjectManager.h"
+#include "../GameObject/Manager/RPG_GameObjectManager.h"
 #include "../DataBase/DataBase.h"
 #include <iostream>
 
@@ -21,8 +21,8 @@ RPG_Game::~RPG_Game()
 #pragma region methods
 void RPG_Game::Start()
 {
-	/*RPG_GameObjectManager::Instance()->DestroyAllObjects();
-	CloseAllMenus();*/
+	RPG_GameObjectManager::Instance()->DestroyAllObjects();
+	CloseAllMenus();
 	isStarted = true;
 }
 void RPG_Game::InitBackGround()
@@ -42,7 +42,7 @@ void RPG_Game::OnDraw()
 		_pair.second->Draw();
 	if (!isStarted)
 		return;
-	//RPG_GameObjectManager::Instance()->Draw(this);
+	RPG_GameObjectManager::Instance()->Draw(this);
 }
 void RPG_Game::OnUpdate()
 {
@@ -50,10 +50,10 @@ void RPG_Game::OnUpdate()
 	{
 		if (!isStarted)
 			return;
-		/*RPG_GameObjectManager* _instance = RPG_GameObjectManager::Instance();
-		_instance->CheckCollision();;
+		RPG_GameObjectManager* _instance = RPG_GameObjectManager::Instance();
+		_instance->CheckCollisions();
 		_instance->Update();
-		_instance->DestroyAllRequests();*/
+		_instance->DestroyAllRequests();
 	}
 	catch (const std::exception& _e)
 	{
