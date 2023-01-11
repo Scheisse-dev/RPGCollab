@@ -18,7 +18,7 @@ protected:
 #pragma region constructor
 public:
 	Window() = default;
-	Window(const char* _title);
+	Window(const int _width, const int _height, const char* _title);
 	Window(const Window& _copy) = delete;
 	virtual ~Window();
 #pragma endregion

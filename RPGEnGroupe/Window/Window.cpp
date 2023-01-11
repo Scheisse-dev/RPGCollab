@@ -6,7 +6,7 @@
 #include <format>
 
 #pragma region constructor
-Window::Window(const char* _title)
+Window::Window(const int _width, const int _height, const char* _title)
 {
 	title = _title;
 }
