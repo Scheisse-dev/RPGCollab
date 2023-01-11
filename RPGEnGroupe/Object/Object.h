@@ -1,5 +1,5 @@
 #pragma once
-#include "../DataBase/DataBase.h"
+#include "../RPG/DataBase/DataBase.h"
 #include <string>
 
 class Object
