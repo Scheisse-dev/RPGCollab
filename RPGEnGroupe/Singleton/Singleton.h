@@ -7,8 +7,8 @@ class Singleton : public Object
 #pragma region f/p
 private:
 	static inline T* instance = nullptr;
-#pragma endregion f/p
-#pragma region constructor/destructor
+#pragma endregion
+#pragma region constructor
 public:
 	Singleton() = default;
 	virtual ~Singleton() override
@@ -16,15 +16,16 @@ public:
 		OnDestroy();
 		delete instance;
 	}
-#pragma endregion constructor/destructor
+#pragma endregion
 #pragma region methods
 public:
-	static T* instance()
+	static T* Instance()
 	{
 		if (instance == nullptr)
 			instance = new T();
 		return instance;
 	}
-	virtual void OnDestroy() {}
-#pragma endregion methods
+	virtual void OnDestroy() { }
+#pragma endregion
+
 };
