@@ -1,25 +1,37 @@
 #pragma once
-#include "../Object/Object.h"
+#include <SFML/Graphics.hpp>
 
-class Window : public Object
+class Window
 {
 #pragma region f/p
 private:
 	bool isOpen = false;
-	sf::RenderWindow window = sf::RenderWindow();
+	const char* title = "Default";
+protected:
+	sf::RenderWindow* window = nullptr;
+	bool eventIfNotFocus = false;
 #pragma endregion
 #pragma region constructor
 public: 
-	Window();
-	virtual ~Window() override;
+	Window() = default;
+	Window(const char* _title);
+	Window(const Window& _copy) = delete;
+	virtual ~Window();
 #pragma endregion
 #pragma region methods
+private: 
+	void Update();
 public:
 	void Open();
 	void Close();
 	bool IsOpen();
-	void OnDraw();
-	void OnUpdate();
+	bool HasFocus();
+	void SetFrameLimit(const int _frame);
+	void Draw(sf::Drawable* _drawable);
+protected:
+	virtual void OnDraw() = 0;
+	virtual void OnUpdate() = 0;
+	virtual void OnReceiveEvent(const sf::Event& _event);
 #pragma endregion
 };
 
