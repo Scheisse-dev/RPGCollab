@@ -1,5 +1,5 @@
 #include "GameObject.h"
-#include "../Manager/RPG_GameObjectManager.h"
+#include "Manager/RPG_GameObjectManager.h"
 #include "../../Window/Window.h"
 
 GameObject::GameObject()
