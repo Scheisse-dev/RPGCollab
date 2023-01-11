@@ -146,6 +146,7 @@
     <ClCompile Include="Entity\Player\Player.cpp" />
     <ClCompile Include="RPGEnGroupe.cpp" />
     <ClCompile Include="RPG_Image.cpp" />
+    <ClCompile Include="UI\Label\RPG_Label.cpp" />
     <ClCompile Include="UI\Manager\UIElementManager.cpp" />
     <ClCompile Include="UI\RPG_UIElement.cpp" />
     <ClCompile Include="Shop\Shop.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Entity\Player\Player.h" />
     <ClInclude Include="RPG_Image.h" />
     <ClInclude Include="Singleton\Singleton.h" />
+    <ClInclude Include="UI\Label\RPG_Label.h" />
     <ClInclude Include="UI\Manager\UIElementManager.h" />
     <ClInclude Include="UI\RPG_UIElement.h" />
     <ClInclude Include="Shop\Shop.h" />
