@@ -66,6 +66,9 @@
     <ClCompile Include="RPG_Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Window\BaseMenu\BaseMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -120,6 +123,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RPG_Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton\Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\BaseMenu\BaseMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

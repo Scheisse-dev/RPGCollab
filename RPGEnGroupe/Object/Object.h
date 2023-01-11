@@ -11,7 +11,7 @@ public:
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
-	virtual std::string ToString() = 0;
+	virtual std::string ToString();
 #pragma endregion methods
 };
 

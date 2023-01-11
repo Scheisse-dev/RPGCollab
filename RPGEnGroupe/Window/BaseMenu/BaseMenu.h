@@ -6,7 +6,7 @@ class BaseMenu : public Object
 {
 #pragma region f/p
 protected:
-	std::vector<class FB_UIElement*> elements = std::vector<class FB_UIElement*>();
+	std::vector<class RPG_UIElement*> elements = std::vector<class RPG_UIElement*>();
 	bool isOpen = false;
 	class Window* owner = nullptr;
 #pragma endregion

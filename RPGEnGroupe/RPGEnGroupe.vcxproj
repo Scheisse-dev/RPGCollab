@@ -150,6 +150,7 @@
     <ClCompile Include="UI\RPG_UIElement.cpp" />
     <ClCompile Include="Shop\Shop.cpp" />
     <ClCompile Include="Spell\Spell.cpp" />
+    <ClCompile Include="Window\BaseMenu\BaseMenu.cpp" />
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,11 +166,13 @@
     <ClInclude Include="Item\Potion\Potion.h" />
     <ClInclude Include="Entity\Player\Player.h" />
     <ClInclude Include="RPG_Image.h" />
+    <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="UI\Manager\UIElementManager.h" />
     <ClInclude Include="UI\RPG_UIElement.h" />
     <ClInclude Include="Shop\Shop.h" />
     <ClInclude Include="Spell\Spell.h" />
     <ClInclude Include="Time\Time.h" />
+    <ClInclude Include="Window\BaseMenu\BaseMenu.h" />
     <ClInclude Include="Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
