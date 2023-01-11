@@ -12,6 +12,7 @@ private:
 public:
 	static bool isKeyDown(const sf::Keyboard::Key& _key);
 	static bool isKeyUp(const sf::Keyboard::Key& _key);
+	static bool mouseIsClicked(const sf::Mouse::Button& _button);
 #pragma endregion methods
 };
 
