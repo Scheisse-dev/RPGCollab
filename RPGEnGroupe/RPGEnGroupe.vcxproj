@@ -150,6 +150,8 @@
     <ClCompile Include="RPG\Menu\RPG_MainMenu.cpp" />
     <ClCompile Include="RPG\Game\RPG_Game.cpp" />
     <ClCompile Include="RPG\GameObject\Manager\RPG_GameObjectManager.cpp" />
+    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Entity.cpp" />
+    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.cpp" />
     <ClCompile Include="UI\Button\RPG_Button.cpp" />
     <ClCompile Include="UI\Image\RPG_Image.cpp" />
     <ClCompile Include="UI\Label\RPG_Label.cpp" />
@@ -181,6 +183,8 @@
     <ClInclude Include="RPG\Menu\RPG_MainMenu.h" />
     <ClInclude Include="RPG\Game\RPG_Game.h" />
     <ClInclude Include="RPG\GameObject\Manager\RPG_GameObjectManager.h" />
+    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Entity.h" />
+    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="UI\Button\RPG_Button.h" />
     <ClInclude Include="UI\Image\RPG_Image.h" />
