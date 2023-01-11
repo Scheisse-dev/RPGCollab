@@ -27,7 +27,7 @@ void RPG_Game::Start()
 }
 void RPG_Game::InitBackGround()
 {
-	background = new RPG_Image(this, "../Donnees/background.png");
+	background = new RPG_Image(this, "../Donnees/background.jpg");
 	background->SetOrigin(sf::Vector2f(0, 0));
 	background->SetPosition(sf::Vector2f(0, 0));
 	background->SetScale(sf::Vector2f(3.0f, 3.5f));
@@ -71,4 +71,4 @@ void RPG_Game::OnReceiveEvent(const sf::Event& _event)
 {
 	Window::OnReceiveEvent(_event);
 }
-#pragma endregion
+#pragma endregion.
