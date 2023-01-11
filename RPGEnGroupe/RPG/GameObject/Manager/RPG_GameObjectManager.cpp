@@ -2,11 +2,11 @@
 #include "../../GameObject/GameObject.h"
 #include "../../../Window/Window.h"
 
+#pragma region methods
 void RPG_GameObjectManager::Register(GameObject* _gameObject)
 {
 	gameObjects.push_back(_gameObject);
 }
-
 void RPG_GameObjectManager::UnRegister(GameObject* _gameObject)
 {
 	const size_t _size = gameObjects.size();
@@ -19,7 +19,6 @@ void RPG_GameObjectManager::UnRegister(GameObject* _gameObject)
 		}
 	}
 }
-
 void RPG_GameObjectManager::Update()
 {
 	const size_t _size = gameObjects.size();
@@ -28,7 +27,6 @@ void RPG_GameObjectManager::Update()
 		gameObjects[i]->OnUpdate();
 	}
 }
-
 void RPG_GameObjectManager::Draw(Window* _window)
 {
 	const size_t _size = gameObjects.size();
@@ -37,7 +35,6 @@ void RPG_GameObjectManager::Draw(Window* _window)
 		gameObjects[i]->OnDraw(_window);
 	}
 }
-
 void RPG_GameObjectManager::CheckCollisions()
 {
 	for (GameObject* _a : gameObjects)
@@ -49,7 +46,27 @@ void RPG_GameObjectManager::CheckCollisions()
 		}
 	}
 }
+void RPG_GameObjectManager::DestroyAllRequests()
+{
+	for (GameObject* _object : objectToDestroy)
+	{
+		UnRegister(_object);
+	}
+	objectToDestroy.clear();
+}
+void RPG_GameObjectManager::DestroyAllObjects()
+{
+	for (GameObject* _object : gameObjects)
+	{
+		delete _object;
+		_object = nullptr;
+	}
+	objectToDestroy.clear();
+	gameObjects.clear();
+}
+#pragma endregion
 
+#pragma region override
 void RPG_GameObjectManager::OnDestroy()
 {
 	const size_t _size = gameObjects.size();
@@ -57,3 +74,4 @@ void RPG_GameObjectManager::OnDestroy()
 		delete gameObjects[i];
 	gameObjects.clear();
 }
+#pragma endregion
