@@ -14,7 +14,7 @@ RPG_Samus::RPG_Samus()
 	}
 	sprite->setOrigin(sf::Vector2f(0, 0));
 	sprite->setScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
-	sprite->setPosition(sf::Vector2f(50, HEIGHT - 150));
+	sprite->setPosition(SAMUS_POSITION);
 	drawable = sprite;
 }
 RPG_Samus::~RPG_Samus()
@@ -49,6 +49,10 @@ void RPG_Samus::OnUpdate()
 	if (Input::IsKeyDown(sf::Keyboard::Space))
 	{
 		sprite->setPosition(sprite->getPosition() - sf::Vector2f(0, JUMP_FORCE));
+	}
+	if (sprite->getPosition().y <= HEIGHT - 125)
+	{
+		sprite->setPosition(sprite->getPosition() + sf::Vector2f(0, 0.05f));
 	}
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const
