@@ -15,6 +15,10 @@ private:
 	sf::Texture* textureSamus = nullptr;
 	sf::Sprite* spritePalpatine = nullptr;
 	sf::Texture* texturePalpatine = nullptr;
+	sf::Sprite* spritePotionMana = nullptr;
+	sf::Texture* texturePotionMana = nullptr;
+	sf::Sprite* spritePotionHeal = nullptr;
+	sf::Texture* texturePotionHeal = nullptr;
 	sf::Vector2f windowSize = sf::Vector2f();
 	Animation* samusAnimRight = nullptr;
 	Animation* samusAnimLeft = nullptr;

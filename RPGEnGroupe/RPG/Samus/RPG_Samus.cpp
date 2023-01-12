@@ -7,18 +7,13 @@
 #pragma region constructor
 RPG_Samus::RPG_Samus()
 {
+	//Samus
 	spriteSamus = new sf::Sprite();
 	textureSamus = new sf::Texture();
-	spritePalpatine = new sf::Sprite();
-	texturePalpatine = new sf::Texture();
 
 	if (textureSamus->loadFromFile("../Donnees/Samus/NoMove.png"))
 	{
 		spriteSamus->setTexture(*textureSamus);
-	}
-	if (texturePalpatine->loadFromFile("../Donnees/Palpatine/Dab.png"))
-	{
-		spritePalpatine->setTexture(*texturePalpatine);
 	}
 
 	spriteSamus->setOrigin(sf::Vector2f(0, 0));
@@ -26,11 +21,49 @@ RPG_Samus::RPG_Samus()
 	spriteSamus->setPosition(SAMUS_POSITION);
 	drawableSamus = spriteSamus;
 
+	//Palpatine
+	spritePalpatine = new sf::Sprite();
+	texturePalpatine = new sf::Texture();
+
+	if (texturePalpatine->loadFromFile("../Donnees/Palpatine/Dab.png"))
+	{
+		spritePalpatine->setTexture(*texturePalpatine);
+	}
+
 	spritePalpatine->setOrigin(sf::Vector2f(0, 0));
 	spritePalpatine->setScale(sf::Vector2f(PALPATINE_SCALE, PALPATINE_SCALE));
 	spritePalpatine->setPosition(PALPATINE_POSITION);
 	drawablePalpatine = spritePalpatine;
 
+	//Potion Mana
+	spritePotionMana = new sf::Sprite();
+	texturePotionMana = new sf::Texture();
+
+	if (texturePotionMana->loadFromFile("../Donnees/Item/Potion_Mana.png"))
+	{
+		spritePotionMana->setTexture(*texturePotionMana);
+	}
+
+	spritePotionMana->setOrigin(sf::Vector2f(0, 0));
+	spritePotionMana->setScale(sf::Vector2f(POTION_MANA_SCALE, POTION_MANA_SCALE));
+	spritePotionMana->setPosition(POTION_MANA_POSITION);
+	drawablePotionMana = spritePotionMana;
+
+	//Potion Heal
+	spritePotionHeal = new sf::Sprite();
+	texturePotionHeal = new sf::Texture();
+
+	if (texturePotionHeal->loadFromFile("../Donnees/Item/Potion_Heal.png"))
+	{
+		spritePotionHeal->setTexture(*texturePotionHeal);
+	}
+
+	spritePotionHeal->setOrigin(sf::Vector2f(0, 0));
+	spritePotionHeal->setScale(sf::Vector2f(POTION_HEAL_SCALE, POTION_HEAL_SCALE));
+	spritePotionHeal->setPosition(POTION_HEAL_POSITION);
+	drawablePotionHeal = spritePotionHeal;
+
+	//animation
 	samusAnimRight = new Animation(spriteSamus, "../Donnees/Samus/Run_Right_low.png", "../Donnees/Samus/Run_Right.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
 	samusAnimRight->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 
@@ -43,10 +76,21 @@ RPG_Samus::~RPG_Samus()
 	spriteSamus = nullptr;
 	delete textureSamus;
 	textureSamus = nullptr;
+
 	delete spritePalpatine;
 	spritePalpatine = nullptr;
 	delete texturePalpatine;
 	texturePalpatine = nullptr;
+
+	delete spritePotionHeal;
+	spritePotionHeal = nullptr;
+	delete texturePotionHeal;
+	texturePotionHeal = nullptr;
+
+	delete spritePotionMana;
+	spritePotionMana = nullptr;
+	delete texturePotionMana;
+	texturePotionMana = nullptr;
 }
 #pragma endregion
 
@@ -62,17 +106,16 @@ void RPG_Samus::OnUpdate()
 {
 	/*if (isDead)
 		return;*/
+	textureSamus->loadFromFile("../Donnees/Samus/NoMove.png");
 	if (Input::IsKeyDown(sf::Keyboard::D))
 	{
-		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(40.0f, 0));
+		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(SAMUS_SPEED, 0));
 		samusAnimRight->AnimationUpdate(2);
-		samusAnimRight->clock->restart();
 	}
 	if (Input::IsKeyDown(sf::Keyboard::Q))
 	{
-		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(-40.0f, 0));
+		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(-SAMUS_SPEED, 0));
 		samusAnimLeft->AnimationUpdate(2);
-		samusAnimLeft->clock->restart();
 	}
 	if (Input::IsKeyDown(sf::Keyboard::Space))
 	{
@@ -82,10 +125,6 @@ void RPG_Samus::OnUpdate()
 	if (spriteSamus->getPosition().y <= HEIGHT - 125)
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(0, 0.05f));
-	}
-	if (Input::IsKeyUp(sf::Keyboard::D) || Input::IsKeyUp(sf::Keyboard::Q))
-	{
-		textureSamus->loadFromFile("../Donnees/Samus/NoMove.png");
 	}
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const

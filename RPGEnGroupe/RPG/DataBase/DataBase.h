@@ -13,7 +13,7 @@
 #define SAMUS_POSITION sf::Vector2f(50, HEIGHT - 125)
 #define SAMUS_SPEED 10
 #define SAMUS_SCALE 1.5f
-#define GRAVITY 0.5f
+#define GRAVITY 1.0f
 
 #define MANA_PER_ATTACK 5
 #define MANA_REGEN 1
@@ -28,8 +28,8 @@
 #define HEAL_POTION 5
 #define MANA_POTION 5
 
-#define POTION_HEAL_POSITION sf::Vector2f(WIDTH-125, HEIGHT - 125)
-#define POTION_MANA_POSITION sf::Vector2f(WIDTH-125, HEIGHT - 125)
+#define POTION_HEAL_POSITION sf::Vector2f(WIDTH-100, 20)
+#define POTION_MANA_POSITION sf::Vector2f(WIDTH-50, 20)
 
 #define POTION_MANA_SCALE 0.5f
 #define POTION_HEAL_SCALE 0.5f
