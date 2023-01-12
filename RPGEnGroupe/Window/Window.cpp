@@ -2,6 +2,7 @@
 #include "../Time/Time.h"
 #include "../Event/Event.h"
 #include "../RPG/DataBase/DataBase.h"
+#include "../UI/Image/RPG_Image.h"
 #include "BaseMenu/BaseMenu.h"
 #include <format>
 
@@ -73,6 +74,10 @@ void Window::SetFrameLimit(const int _frame)
 void Window::Draw(sf::Drawable* _drawable)
 {
 	window->draw(*_drawable);
+}
+void Window::SetBackground(const char* _path)
+{
+	background = new RPG_Image(this, _path);
 }
 void Window::OnReceiveEvent(const sf::Event& _event)
 {

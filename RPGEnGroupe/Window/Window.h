@@ -12,6 +12,7 @@ protected:
 	const char* title = "default Window";
 	sf::RenderWindow* window = nullptr;
 	std::map<const char*, BaseMenu*> menus = std::map<const char*, BaseMenu*>();
+	class RPG_Image* background = nullptr;
 protected:
 	bool eventIfNotFocus = false;
 #pragma endregion
@@ -32,6 +33,7 @@ public:
 	bool HasFocus() const;
 	void SetFrameLimit(const int _frame);
 	void Draw(sf::Drawable* _drawable);
+	void SetBackground(const char* _path);
 	sf::RenderWindow* Renderer() const;
 protected:
 	void CloseAllMenus();

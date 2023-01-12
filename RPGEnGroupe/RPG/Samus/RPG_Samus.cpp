@@ -1,6 +1,7 @@
 #include "RPG_Samus.h"
 #include "../../Time/Time.h"
 #include "../../Event/Input/Input.h"
+#include "../../UI/Image/RPG_Image.h"
 
 #pragma region constructor
 RPG_Samus::RPG_Samus()
@@ -61,6 +62,15 @@ sf::Vector2f RPG_Samus::Position() const
 void RPG_Samus::SetWindowSize(const sf::Vector2f& _size)
 {
 	windowSize = _size;
+}
+void RPG_Samus::SetPosition(const sf::Vector2f& _position)
+{
+	if (sprite == nullptr) return;
+	sprite->setPosition(_position);
+}
+void RPG_Samus::OnDraw(Window* _window)
+{
+	GameObject::OnDraw(_window);
 }
 #pragma endregion
 
