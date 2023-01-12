@@ -1,7 +1,5 @@
 #include "Animation.h"
 
-
-
 #pragma region constructor/destructor
 Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2)
 {
@@ -16,8 +14,6 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 	Anime2Frames();
 }
 
-
-
 Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const char* _frame3)
 {
 	clock = new sf::Clock;
@@ -31,8 +27,6 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 
 	Anime3Frames();
 }
-
-
 
 Animation::~Animation()
 {
@@ -112,7 +106,10 @@ void Animation::AnimationUpdate(const int _frameNumber)
 		throw std::exception("[ANIMATION] (Animation update) frames number doesn't valid !");
 
 }
-
+void Animation::SetScale(const sf::Vector2f& _vector)
+{
+	sprite->setScale(_vector);
+}
 #pragma endregion methods
 
 

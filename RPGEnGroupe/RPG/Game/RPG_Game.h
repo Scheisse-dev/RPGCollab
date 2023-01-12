@@ -6,7 +6,6 @@ class RPG_Game : public Window
 #pragma region f/p
 private:
 	bool isStarted = false;
-
 	class RPG_Samus* samus = nullptr;
 #pragma endregion
 #pragma region constructor

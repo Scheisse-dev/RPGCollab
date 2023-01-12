@@ -7,7 +7,8 @@ class Window;
 class GameObject : public Object
 {
 protected:
-	sf::Drawable* drawable = nullptr;
+	sf::Drawable* drawableSamus = nullptr;
+	sf::Drawable* drawablePalpatine = nullptr;
 
 public:
 	GameObject();

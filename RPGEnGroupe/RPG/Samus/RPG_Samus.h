@@ -12,10 +12,13 @@ class RPG_Samus : public GameObject
 #pragma region f/p
 private:
 	bool isDead = false;
-	sf::Sprite* sprite = nullptr;
-	sf::Texture* texture = nullptr;
+	sf::Sprite* spriteSamus = nullptr;
+	sf::Texture* textureSamus = nullptr;
+	sf::Sprite* spritePalpatine = nullptr;
+	sf::Texture* texturePalpatine = nullptr;
 	sf::Vector2f windowSize = sf::Vector2f();
-	Animation* samusAnim = nullptr;
+	Animation* samusAnimRight = nullptr;
+	Animation* samusAnimLeft = nullptr;
 public:
 	Delegate<void> onDie = nullptr;
 #pragma endregion f/p

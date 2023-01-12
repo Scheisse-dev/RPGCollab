@@ -26,5 +26,6 @@ public:
 	void Anime3Frames();
 	const char* GetFrame(const int _frameNumber);
 	void AnimationUpdate(const int _frameNumber);
+	void SetScale(const sf::Vector2f& _vector);
 #pragma endregion methods
 };
