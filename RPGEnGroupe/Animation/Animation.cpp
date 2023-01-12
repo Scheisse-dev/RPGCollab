@@ -1,7 +1,7 @@
 #include "Animation.h"
 
 #pragma region constructor/destructor
-Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2)
+Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const float _initialSpeed, const float _speed)
 {
 	clock = new sf::Clock;
 	texture = new sf::Texture;
@@ -9,12 +9,14 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 	frame1 = _frame1; 
 	frame2 = _frame2;
 	 
+	initialSpeed = _initialSpeed;
+	speed = _speed;
 	sprite = _sprite;
 
 	Anime2Frames();
 }
 
-Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const char* _frame3)
+Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const char* _frame3, const float _initialSpeed, const float _speed)
 {
 	clock = new sf::Clock;
 	texture = new sf::Texture;
@@ -23,6 +25,8 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 	frame2 = _frame2;
 	frame3 = _frame3; 
 
+	initialSpeed = _initialSpeed;
+	speed = _speed; 
 	sprite = _sprite; 
 
 	Anime3Frames();
@@ -47,16 +51,16 @@ void Animation::Anime2Frames()
 {
 	
 	float _elapsed = clock->getElapsedTime().asSeconds();
-	if (_elapsed <= sf::seconds(0.5f).asSeconds())
+	if (_elapsed <= sf::seconds(initialSpeed).asSeconds())
 	{
 		if (!texture->loadFromFile(frame1)) return;
 	}
-	if (_elapsed >= sf::seconds(1.f).asSeconds())
+	if (_elapsed >= sf::seconds(initialSpeed + speed).asSeconds())
 	{
 		if (!texture->loadFromFile(frame2)) return;
 		
 	}
-	if (_elapsed >= sf::seconds(2.f).asSeconds())
+	if (_elapsed >= sf::seconds(initialSpeed + 2 * speed).asSeconds())
 		clock->restart();
 	sprite->setTexture(*texture);
 }
@@ -64,16 +68,16 @@ void Animation::Anime2Frames()
 void Animation::Anime3Frames()
 {
 	float _elapsed = clock->getElapsedTime().asSeconds();
-	if (_elapsed <= sf::seconds(0.5f).asSeconds())
+	if (_elapsed <= sf::seconds(initialSpeed).asSeconds())
 	{
 		if (!texture->loadFromFile(frame1)) return;
 	}
-	if (_elapsed >= sf::seconds(0.5f).asSeconds() && _elapsed <= sf::seconds(1.f).asSeconds())
+	if (_elapsed >= sf::seconds(initialSpeed + speed).asSeconds() && _elapsed <= sf::seconds(initialSpeed + 2*speed).asSeconds())
 	{
 		if (!texture->loadFromFile(frame2)) return;
 		clock->restart();
 	}
-	if (_elapsed >= sf::seconds(1.f).asSeconds())
+	if (_elapsed >= sf::seconds(initialSpeed + 3* speed).asSeconds())
 	{
 		if (!texture->loadFromFile(frame3)) return;
 		clock->restart();

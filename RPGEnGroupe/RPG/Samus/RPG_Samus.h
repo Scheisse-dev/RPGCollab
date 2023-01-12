@@ -2,8 +2,7 @@
 #include "../GameObject/GameObject.h"
 #include "../../Event/Delegate/Delegate.h"
 
-#define SAMUS_SCALE 1.5f
-#define GRAVITY 0.5f
+
 
 class Animation;
 
