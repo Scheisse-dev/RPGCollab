@@ -6,9 +6,11 @@
 Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2)
 {
 	clock = new sf::Clock;
+	texture = new sf::Texture;
+
 	frame1 = _frame1; 
 	frame2 = _frame2;
-
+	 
 	sprite = _sprite;
 
 	Anime2Frames();
@@ -19,6 +21,7 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const char* _frame3)
 {
 	clock = new sf::Clock;
+	texture = new sf::Texture;
 
 	frame1 = _frame1;
 	frame2 = _frame2;
@@ -48,38 +51,42 @@ Animation::~Animation()
 #pragma region methods
 void Animation::Anime2Frames()
 {
-	sf::Texture* _texture = new sf::Texture;
 	
-	if (clock->getElapsedTime().asSeconds() <= 1.0f)
+	float _elapsed = clock->getElapsedTime().asSeconds();
+	if (_elapsed <= sf::seconds(0.5f).asSeconds())
 	{
-		if (!_texture->loadFromFile(frame1)) return;
+		if (!texture->loadFromFile(frame1)) return;
 	}
-	if (clock->getElapsedTime().asSeconds() >= 1.0f && clock->getElapsedTime().asSeconds() <= 1.2f)
+	if (_elapsed >= sf::seconds(1.f).asSeconds())
 	{
-		if (!_texture->loadFromFile(frame2)) return;
+		if (!texture->loadFromFile(frame2)) return;
+		
 	}
-	sprite->setTexture(*_texture);
-	clock->restart();
+	if (_elapsed >= sf::seconds(2.f).asSeconds())
+		clock->restart();
+	sprite->setTexture(*texture);
 }
 
 void Animation::Anime3Frames()
 {
-	sf::Texture* _texture = new sf::Texture;
-	if (clock->getElapsedTime().asSeconds() <= 1.0f)
+	float _elapsed = clock->getElapsedTime().asSeconds();
+	if (_elapsed <= sf::seconds(0.5f).asSeconds())
 	{
-		if (!_texture->loadFromFile(frame1)) return;
+		if (!texture->loadFromFile(frame1)) return;
 	}
-	if (clock->getElapsedTime().asSeconds() >= 1.0f && clock->getElapsedTime().asSeconds() <= 1.2f)
+	if (_elapsed >= sf::seconds(0.5f).asSeconds() && _elapsed <= sf::seconds(1.f).asSeconds())
 	{
-		if (!_texture->loadFromFile(frame2)) return;
+		if (!texture->loadFromFile(frame2)) return;
+		clock->restart();
 	}
-	if (clock->getElapsedTime().asSeconds() >= 1.2f && clock->getElapsedTime().asSeconds() <= 1.5f)
+	if (_elapsed >= sf::seconds(1.f).asSeconds())
 	{
-		if (!_texture->loadFromFile(frame3)) return;
+		if (!texture->loadFromFile(frame3)) return;
+		clock->restart();
 	}
-	sprite->setTexture(*_texture);
-	clock->restart();
+	sprite->setTexture(*texture);
 }
+	
 const char* Animation::GetFrame(const int _frameNumber)
 {
 
@@ -90,7 +97,7 @@ const char* Animation::GetFrame(const int _frameNumber)
 	if (_frameNumber == 3)
 		return frame3;
 
-	throw std::exception("[ANIMATION] frames number doesn't valid !");
+	throw std::exception("[ANIMATION] (getFrame) frames number doesn't valid !");
 	return ""; 
 }
 
@@ -100,8 +107,9 @@ void Animation::AnimationUpdate(const int _frameNumber)
 		Anime2Frames();
 	if (_frameNumber == 3)
 		Anime3Frames();
-	else
-		throw std::exception("[ANIMATION] frames number doesn't valid !");
+
+	if(_frameNumber > 3 || _frameNumber <2)
+		throw std::exception("[ANIMATION] (Animation update) frames number doesn't valid !");
 
 }
 

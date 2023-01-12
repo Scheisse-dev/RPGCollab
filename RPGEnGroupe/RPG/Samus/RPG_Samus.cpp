@@ -2,6 +2,7 @@
 #include "../../Time/Time.h"
 #include "../../Event/Input/Input.h"
 #include "../../UI/Image/RPG_Image.h"
+#include "../../Animation/Animation.h"
 
 #pragma region constructor
 RPG_Samus::RPG_Samus()
@@ -15,6 +16,7 @@ RPG_Samus::RPG_Samus()
 	sprite->setOrigin(sf::Vector2f(0, 0));
 	sprite->setScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 	sprite->setPosition(sf::Vector2f(50, HEIGHT - 150));
+	samusAnim = new Animation(sprite, "../Donnees/Samus/Run_Left_low.png", "../Donnees/Samus/Run_left.png");
 	drawable = sprite;
 }
 RPG_Samus::~RPG_Samus()
@@ -40,7 +42,8 @@ void RPG_Samus::OnUpdate()
 		return;*/
 	if (Input::IsKeyDown(sf::Keyboard::D))
 	{
-		sprite->setPosition(sprite->getPosition() + sf::Vector2f(40.0f, 0));
+		sprite->setPosition(sprite->getPosition() + sf::Vector2f(5.0f, 0));
+		samusAnim->AnimationUpdate(2);
 	}
 	if (Input::IsKeyDown(sf::Keyboard::Q))
 	{
@@ -49,6 +52,10 @@ void RPG_Samus::OnUpdate()
 	if (Input::IsKeyDown(sf::Keyboard::Space))
 	{
 		sprite->setPosition(sprite->getPosition() - sf::Vector2f(0, JUMP_FORCE));
+	}
+	if (Input::IsKeyUp(sf::Keyboard::D))
+	{
+		sprite->setTexture(*texture); 
 	}
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const

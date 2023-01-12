@@ -5,6 +5,8 @@
 #define SAMUS_SCALE 1.5f
 #define GRAVITY 0.5f
 
+class Animation;
+
 class RPG_Samus : public GameObject
 {
 #pragma region f/p
@@ -13,6 +15,7 @@ private:
 	sf::Sprite* sprite = nullptr;
 	sf::Texture* texture = nullptr;
 	sf::Vector2f windowSize = sf::Vector2f();
+	Animation* samusAnim = nullptr;
 public:
 	Delegate<void> onDie = nullptr;
 #pragma endregion f/p

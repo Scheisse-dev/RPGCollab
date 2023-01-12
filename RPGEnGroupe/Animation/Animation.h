@@ -6,11 +6,13 @@ class Animation
 {
 #pragma region f/p
 private:
-	sf::Clock* clock = nullptr; 
 	sf::Sprite* sprite = nullptr;
+	sf::Texture* texture = nullptr;
 	const char* frame1 = nullptr; 
 	const char* frame2 = nullptr;
 	const char* frame3 = nullptr;
+public:
+	sf::Clock* clock = nullptr; 
 #pragma endregion f/p
 #pragma region constructor/destructor
 public:
