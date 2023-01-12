@@ -11,6 +11,8 @@ protected:
 	sf::Drawable* drawablePalpatine = nullptr;
 	sf::Drawable* drawablePotionMana = nullptr;
 	sf::Drawable* drawablePotionHeal = nullptr;
+	sf::Drawable* drawablePotionManaText = nullptr;
+	sf::Drawable* drawablePotionHealText = nullptr;
 
 public:
 	GameObject();

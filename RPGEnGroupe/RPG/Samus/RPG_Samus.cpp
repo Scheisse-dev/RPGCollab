@@ -3,10 +3,21 @@
 #include "../../Event/Input/Input.h"
 #include "../../UI/Image/RPG_Image.h"
 #include "../../Animation/Animation.h"
+#include "../../Inventory/Inventory.h"
+#include <iostream>
 
 #pragma region constructor
 RPG_Samus::RPG_Samus()
 {
+	//inventory
+	Inventory inventory = Inventory();
+
+	//Font
+	font = new sf::Font();
+	if (!font->loadFromFile("../Donnees/Fonts/Ubuntu-Title.ttf"))
+		return;
+
+
 	//Samus
 	spriteSamus = new sf::Sprite();
 	textureSamus = new sf::Texture();
@@ -38,11 +49,19 @@ RPG_Samus::RPG_Samus()
 	//Potion Mana
 	spritePotionMana = new sf::Sprite();
 	texturePotionMana = new sf::Texture();
+	textMana = new sf::Text();
 
 	if (texturePotionMana->loadFromFile("../Donnees/Item/Potion_Mana.png"))
 	{
 		spritePotionMana->setTexture(*texturePotionMana);
 	}
+
+	textMana->setFont(*font);
+	textMana->setString("x" + std::to_string(inventory.ManaPotionCount()));
+	textMana->setCharacterSize(SIZE_TEXT);
+	textMana->setFillColor(COLOR_TEXT);
+	textMana->setPosition(TEXT_MANA_POSITION);
+	drawablePotionManaText = textMana;
 
 	spritePotionMana->setOrigin(sf::Vector2f(0, 0));
 	spritePotionMana->setScale(sf::Vector2f(POTION_MANA_SCALE, POTION_MANA_SCALE));
@@ -52,11 +71,19 @@ RPG_Samus::RPG_Samus()
 	//Potion Heal
 	spritePotionHeal = new sf::Sprite();
 	texturePotionHeal = new sf::Texture();
+	textHeal = new sf::Text();
 
 	if (texturePotionHeal->loadFromFile("../Donnees/Item/Potion_Heal.png"))
 	{
 		spritePotionHeal->setTexture(*texturePotionHeal);
 	}
+
+	textHeal->setFont(*font);
+	textHeal->setString("x" + std::to_string(inventory.HealPotionCount()));
+	textHeal->setCharacterSize(SIZE_TEXT);
+	textHeal->setFillColor(COLOR_TEXT);
+	textHeal->setPosition(TEXT_HEAL_POSITION);
+	drawablePotionHealText = textHeal;
 
 	spritePotionHeal->setOrigin(sf::Vector2f(0, 0));
 	spritePotionHeal->setScale(sf::Vector2f(POTION_HEAL_SCALE, POTION_HEAL_SCALE));
@@ -122,6 +149,18 @@ void RPG_Samus::OnUpdate()
 	if (Input::IsKeyDown(sf::Keyboard::Space))
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() - sf::Vector2f(0, JUMP_FORCE));
+	}
+	if (Input::IsKeyDown(sf::Keyboard::A))
+	{
+		std::cout << "Heal !" << std::endl;
+	}
+	if (Input::IsKeyDown(sf::Keyboard::E))
+	{
+		std::cout << "Mana !" << std::endl;
+	}
+	if (Input::IsKeyDown(sf::Keyboard::F))
+	{
+		std::cout << "Open chest !" << std::endl;
 	}
 	//position au sol
 	if (spriteSamus->getPosition().y <= HEIGHT - 125)

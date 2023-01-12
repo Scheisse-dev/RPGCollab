@@ -28,8 +28,13 @@
 #define HEAL_POTION 5
 #define MANA_POTION 5
 
-#define POTION_HEAL_POSITION sf::Vector2f(WIDTH-100, 20)
-#define POTION_MANA_POSITION sf::Vector2f(WIDTH-50, 20)
+#define POTION_HEAL_POSITION sf::Vector2f(WIDTH-100, 40)
+#define POTION_MANA_POSITION sf::Vector2f(WIDTH-50, 40)
+
+#define TEXT_MANA_POSITION sf::Vector2f(WIDTH-30, 65)
+#define TEXT_HEAL_POSITION sf::Vector2f(WIDTH-80, 65)
+#define COLOR_TEXT sf::Color::White
+#define SIZE_TEXT 15
 
 #define POTION_MANA_SCALE 0.5f
 #define POTION_HEAL_SCALE 0.5f

@@ -13,6 +13,8 @@ GameObject::GameObject(const GameObject& _copy)
 	drawablePalpatine = _copy.drawablePalpatine;
 	drawablePotionMana = _copy.drawablePotionMana;
 	drawablePotionHeal = _copy.drawablePotionHeal;
+	drawablePotionManaText = _copy.drawablePotionManaText;
+	drawablePotionHealText = _copy.drawablePotionHealText;
 }
 
 GameObject::~GameObject()
@@ -25,6 +27,10 @@ GameObject::~GameObject()
 	drawablePotionMana = nullptr;
 	delete drawablePotionHeal;
 	drawablePotionHeal = nullptr;
+	delete drawablePotionHealText;
+	drawablePotionHealText = nullptr;
+	delete drawablePotionManaText;
+	drawablePotionManaText = nullptr;
 }
 
 void GameObject::OnUpdate()
@@ -37,6 +43,8 @@ void GameObject::OnDraw(Window* _window)
 	_window->Draw(drawablePalpatine);
 	_window->Draw(drawablePotionMana);
 	_window->Draw(drawablePotionHeal);
+	_window->Draw(drawablePotionManaText);
+	_window->Draw(drawablePotionHealText);
 }
 
 void GameObject::OnCollisionEnter(GameObject* _object)

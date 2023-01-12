@@ -2,8 +2,6 @@
 #include "../GameObject/GameObject.h"
 #include "../../Event/Delegate/Delegate.h"
 
-
-
 class Animation;
 
 class RPG_Samus : public GameObject
@@ -11,15 +9,25 @@ class RPG_Samus : public GameObject
 #pragma region f/p
 private:
 	bool isDead = false;
+
+	sf::Font* font = nullptr;
+
 	sf::Sprite* spriteSamus = nullptr;
 	sf::Texture* textureSamus = nullptr;
+
 	sf::Sprite* spritePalpatine = nullptr;
 	sf::Texture* texturePalpatine = nullptr;
+
+	sf::Text* textMana = nullptr;
 	sf::Sprite* spritePotionMana = nullptr;
 	sf::Texture* texturePotionMana = nullptr;
+
+	sf::Text* textHeal = nullptr;
 	sf::Sprite* spritePotionHeal = nullptr;
 	sf::Texture* texturePotionHeal = nullptr;
+
 	sf::Vector2f windowSize = sf::Vector2f();
+
 	Animation* samusAnimRight = nullptr;
 	Animation* samusAnimLeft = nullptr;
 public:
