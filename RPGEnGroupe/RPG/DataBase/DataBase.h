@@ -17,6 +17,13 @@
 #define MOB_MAX_LIFE 50
 #define MOB_DAMAGE 15
 
+
+#define HEAL_POTION 5
+#define MANA_POTION 5
+
+
+
+
 #define CHEST_SIZE 0.1f
 
 #define LABEL_FONT ""
