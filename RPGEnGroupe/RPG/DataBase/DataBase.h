@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML/Graphics.hpp>
 
 #define WIDTH 900
 #define HEIGHT 500
@@ -8,7 +9,8 @@
 //Player
 #define PLAYER_MAX_LIFE 100
 #define PLAYER_DAMAGE 10
-#define JUMP_FORCE 40
+#define JUMP_FORCE 100
+#define SAMUS_POSITION sf::Vector2f(50, HEIGHT - 125)
 
 #define MANA_PER_ATTACK 5
 #define MANA_REGEN 1
