@@ -93,6 +93,9 @@
     <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Mob\RPG_Mob.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Item\RPG_Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -183,6 +186,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Mob\RPG_Mob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item\RPG_Item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

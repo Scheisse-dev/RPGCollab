@@ -8,6 +8,8 @@
 //Player
 #define PLAYER_MAX_LIFE 100
 #define PLAYER_DAMAGE 10
+#define JUMP_FORCE 40
+
 #define MANA_PER_ATTACK 5
 #define MANA_REGEN 1
 

@@ -13,6 +13,7 @@ RPG_Samus::RPG_Samus()
 	}
 	sprite->setOrigin(sf::Vector2f(0, 0));
 	sprite->setScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
+	sprite->setPosition(sf::Vector2f(50, HEIGHT - 150));
 	drawable = sprite;
 }
 RPG_Samus::~RPG_Samus()
@@ -25,24 +26,28 @@ RPG_Samus::~RPG_Samus()
 #pragma endregion
 
 #pragma region override
-void RPG_Samus::Die()
-{
-	if (isDead)
-		return;
-	isDead = true;
-	onDie.Invoke();
-}
+//void RPG_Samus::Die()
+//{
+//	if (isDead)
+//		return;
+//	isDead = true;
+//	onDie.Invoke();
+//}
 void RPG_Samus::OnUpdate()
 {
-	if (isDead)
-		return;
+	/*if (isDead)
+		return;*/
 	if (Input::IsKeyDown(sf::Keyboard::D))
 	{
-		sprite->setPosition(sprite->getPosition() + sf::Vector2f(0.10f, 0));
+		sprite->setPosition(sprite->getPosition() + sf::Vector2f(40.0f, 0));
 	}
 	if (Input::IsKeyDown(sf::Keyboard::Q))
 	{
-		sprite->setPosition(sprite->getPosition() + sf::Vector2f(-0.10f, 0));
+		sprite->setPosition(sprite->getPosition() + sf::Vector2f(-40.0f, 0));
+	}
+	if (Input::IsKeyDown(sf::Keyboard::Space))
+	{
+		sprite->setPosition(sprite->getPosition() - sf::Vector2f(0, JUMP_FORCE));
 	}
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const
