@@ -93,6 +93,12 @@
     <ClCompile Include="RPG\Samus\RPG_Samus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window\Window.h">
@@ -183,6 +189,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RPG\Samus\RPG_Samus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

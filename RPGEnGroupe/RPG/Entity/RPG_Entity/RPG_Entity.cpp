@@ -15,18 +15,3 @@ RPG_Entity::RPG_Entity(const RPG_Entity& _copy)
 }
 
 RPG_Entity::~RPG_Entity() {}
-
-int RPG_Entity::Life() const
-{
-	return life;
-}
-
-int RPG_Entity::Damage() const
-{
-	return damage;
-}
-
-std::string RPG_Entity::Name() const
-{
-	return name;
-}

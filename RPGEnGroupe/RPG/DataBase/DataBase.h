@@ -5,8 +5,11 @@
 
 #define SAMUS "../Donnees/Samus.png"
 
-//Entity
+//Player
 #define PLAYER_MAX_LIFE 100
+#define PLAYER_DAMAGE 10
+
+
 #define MOB_MAX_LIFE 50
 
 

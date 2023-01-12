@@ -21,9 +21,10 @@ public:
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
-	virtual int Life() const;
-	virtual int Damage() const;
-	virtual std::string Name() const;
+	virtual int Life() const = 0 ;
+	virtual int Damage() const = 0;
+	virtual std::string Name() const = 0;
+
 
 #pragma endregion methods
 
