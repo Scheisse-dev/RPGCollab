@@ -36,9 +36,6 @@
     <ClCompile Include="Item\Potion\Heal\PotionHeal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Item\Potion\Potion.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Item\Gold\Gold.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -114,9 +111,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Item\Potion\Heal\PotionHeal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Item\Potion\Potion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Item\Gold\Gold.h">

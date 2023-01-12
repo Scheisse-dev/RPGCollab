@@ -141,7 +141,6 @@
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="Item\Potion\Mana\PotionMana.cpp" />
     <ClCompile Include="Item\Potion\Heal\PotionHeal.cpp" />
-    <ClCompile Include="Item\Potion\Potion.cpp" />
     <ClCompile Include="RPGEnGroupe.cpp" />
     <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Entity.cpp" />
     <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.cpp" />
@@ -172,7 +171,6 @@
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Item\Potion\Mana\PotionMana.h" />
     <ClInclude Include="Item\Potion\Heal\PotionHeal.h" />
-    <ClInclude Include="Item\Potion\Potion.h" />
     <ClInclude Include="RPG\DataBase\DataBase.h" />
     <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Entity.h" />
     <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.h" />
