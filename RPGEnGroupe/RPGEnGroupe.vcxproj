@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation\Animation.cpp" />
     <ClCompile Include="Chest\Chest.cpp" />
     <ClCompile Include="Event\Input\Input.cpp" />
     <ClCompile Include="Inventory\Inventory.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation\Animation.h" />
     <ClInclude Include="Chest\Chest.h" />
     <ClInclude Include="DataBase\DataBase.h" />
     <ClInclude Include="Event\Delegate\Delegate.h" />

@@ -2,7 +2,7 @@
 #include "../GameObject/GameObject.h"
 #include "../../Event/Delegate/Delegate.h"
 
-#define SAMUS_SCALE 1.0f
+#define SAMUS_SCALE 1.5f
 #define GRAVITY 0.5f
 
 class RPG_Samus : public GameObject
@@ -12,6 +12,7 @@ private:
 	bool isDead = false;
 	sf::Sprite* sprite = nullptr;
 	sf::Texture* texture = nullptr;
+	class RPG_Image* background = nullptr;
 	sf::Vector2f windowSize = sf::Vector2f();
 public:
 	Delegate<void> onDie = nullptr;
@@ -21,9 +22,13 @@ public:
 	RPG_Samus();
 	virtual ~RPG_Samus() override;
 #pragma endregion constructor/destructor
+#pragma region methods
+public:
+	void InitBackGround();
+#pragma endregion
 #pragma region override
 private:
-	void Die();
+	//void Die();
 public:
 	virtual void OnUpdate() override;
 	virtual sf::FloatRect GetGlobalBounds() const override;
