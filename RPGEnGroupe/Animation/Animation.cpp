@@ -5,10 +5,15 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 {
 	clock = new sf::Clock;
 	texture = new sf::Texture;
-
+	texture1 = new sf::Texture;
 	frame1 = _frame1; 
 	frame2 = _frame2;
-	 
+
+	if (frame1 != nullptr)
+		texture->loadFromFile(frame1);
+	if (frame2 != nullptr)
+		texture1->loadFromFile(frame2);
+
 	initialSpeed = _initialSpeed;
 	speed = _speed;
 	sprite = _sprite;
@@ -20,10 +25,19 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 {
 	clock = new sf::Clock;
 	texture = new sf::Texture;
+	texture1 = new sf::Texture;
+	texture2 = new sf::Texture;
 
 	frame1 = _frame1;
 	frame2 = _frame2;
-	frame3 = _frame3; 
+	frame3 = _frame3;
+
+	if (frame1 != nullptr)
+		texture->loadFromFile(frame1);
+	if (frame2 != nullptr)
+		texture1->loadFromFile(frame2);
+	if (frame3 != nullptr)
+		texture2->loadFromFile(frame3);
 
 	initialSpeed = _initialSpeed;
 	speed = _speed; 
@@ -53,16 +67,14 @@ void Animation::Anime2Frames()
 	float _elapsed = clock->getElapsedTime().asSeconds();
 	if (_elapsed <= sf::seconds(initialSpeed).asSeconds())
 	{
-		if (!texture->loadFromFile(frame1)) return;
+		sprite->setTexture(*texture);
 	}
 	if (_elapsed >= sf::seconds(initialSpeed + speed).asSeconds())
 	{
-		if (!texture->loadFromFile(frame2)) return;
-		
+		sprite->setTexture(*texture1);
 	}
 	if (_elapsed >= sf::seconds(initialSpeed + 2 * speed).asSeconds())
 		clock->restart();
-	sprite->setTexture(*texture);
 }
 
 void Animation::Anime3Frames()
@@ -70,19 +82,18 @@ void Animation::Anime3Frames()
 	float _elapsed = clock->getElapsedTime().asSeconds();
 	if (_elapsed <= sf::seconds(initialSpeed).asSeconds())
 	{
-		if (!texture->loadFromFile(frame1)) return;
+		sprite->setTexture(*texture);
 	}
 	if (_elapsed >= sf::seconds(initialSpeed + speed).asSeconds() && _elapsed <= sf::seconds(initialSpeed + 2*speed).asSeconds())
 	{
-		if (!texture->loadFromFile(frame2)) return;
+		sprite->setTexture(*texture1);
 		clock->restart();
 	}
 	if (_elapsed >= sf::seconds(initialSpeed + 3* speed).asSeconds())
 	{
-		if (!texture->loadFromFile(frame3)) return;
+		sprite->setTexture(*texture2);
 		clock->restart();
 	}
-	sprite->setTexture(*texture);
 }
 	
 const char* Animation::GetFrame(const int _frameNumber)

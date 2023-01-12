@@ -28,6 +28,7 @@ void RPG_Game::Start()
 	isStarted = true;
 	samus = new RPG_Samus();
 	samus->SetWindowSize(sf::Vector2f(WIDTH, HEIGHT));
+	samus->SetPosition(sf::Vector2f(0, 0));
 	SetBackground("../Donnees/Backgroung_Game.png");
 	background->SetOrigin(sf::Vector2f(0, 0));
 	background->SetPosition(sf::Vector2f(0, 0));
@@ -51,6 +52,7 @@ void RPG_Game::OnDraw()
 	if (!isStarted)
 		return;
 	RPG_GameObjectManager::Instance()->Draw(this);
+
 }
 void RPG_Game::OnUpdate()
 {
@@ -78,6 +80,7 @@ void RPG_Game::InitMenus()
 }
 void RPG_Game::OnReceiveEvent(const sf::Event& _event)
 {
+	Window::OnReceiveEvent(_event);
 	if (_event.type == sf::Event::Resized)
 	{
 		samus->SetWindowSize(sf::Vector2f(WIDTH, HEIGHT));

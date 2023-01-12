@@ -8,6 +8,8 @@ class Animation
 private:
 	sf::Sprite* sprite = nullptr;
 	sf::Texture* texture = nullptr;
+	sf::Texture* texture1 = nullptr;
+	sf::Texture* texture2 = nullptr;
 	const char* frame1 = nullptr; 
 	const char* frame2 = nullptr;
 	const char* frame3 = nullptr;
