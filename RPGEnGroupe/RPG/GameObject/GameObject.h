@@ -13,6 +13,8 @@ protected:
 	sf::Drawable* drawablePotionHeal = nullptr;
 	sf::Drawable* drawablePotionManaText = nullptr;
 	sf::Drawable* drawablePotionHealText = nullptr;
+	sf::Drawable* drawableCoin = nullptr;
+	sf::Drawable* drawableCoinText = nullptr;
 
 public:
 	GameObject();

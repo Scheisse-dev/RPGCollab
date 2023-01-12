@@ -26,6 +26,10 @@ private:
 	sf::Sprite* spritePotionHeal = nullptr;
 	sf::Texture* texturePotionHeal = nullptr;
 
+	sf::Text* textCoin = nullptr;
+	sf::Sprite* spriteCoin = nullptr;
+	sf::Texture* textureCoin = nullptr;
+
 	sf::Vector2f windowSize = sf::Vector2f();
 
 	Animation* samusAnimRight = nullptr;

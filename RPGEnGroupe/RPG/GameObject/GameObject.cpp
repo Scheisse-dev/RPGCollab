@@ -15,6 +15,8 @@ GameObject::GameObject(const GameObject& _copy)
 	drawablePotionHeal = _copy.drawablePotionHeal;
 	drawablePotionManaText = _copy.drawablePotionManaText;
 	drawablePotionHealText = _copy.drawablePotionHealText;
+	drawableCoin = _copy.drawableCoin;
+	drawableCoinText = _copy.drawableCoinText;
 }
 
 GameObject::~GameObject()
@@ -31,6 +33,10 @@ GameObject::~GameObject()
 	drawablePotionHealText = nullptr;
 	delete drawablePotionManaText;
 	drawablePotionManaText = nullptr;
+	delete drawableCoin;
+	drawableCoin= nullptr;
+	delete drawableCoinText;
+	drawableCoinText = nullptr;
 }
 
 void GameObject::OnUpdate()
@@ -45,6 +51,8 @@ void GameObject::OnDraw(Window* _window)
 	_window->Draw(drawablePotionHeal);
 	_window->Draw(drawablePotionManaText);
 	_window->Draw(drawablePotionHealText);
+	_window->Draw(drawableCoin);
+	_window->Draw(drawableCoinText);
 }
 
 void GameObject::OnCollisionEnter(GameObject* _object)

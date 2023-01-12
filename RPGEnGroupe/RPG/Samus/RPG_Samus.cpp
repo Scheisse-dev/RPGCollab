@@ -17,7 +17,6 @@ RPG_Samus::RPG_Samus()
 	if (!font->loadFromFile("../Donnees/Fonts/Ubuntu-Title.ttf"))
 		return;
 
-
 	//Samus
 	spriteSamus = new sf::Sprite();
 	textureSamus = new sf::Texture();
@@ -89,6 +88,28 @@ RPG_Samus::RPG_Samus()
 	spritePotionHeal->setScale(sf::Vector2f(POTION_HEAL_SCALE, POTION_HEAL_SCALE));
 	spritePotionHeal->setPosition(POTION_HEAL_POSITION);
 	drawablePotionHeal = spritePotionHeal;
+
+	//coin
+	spriteCoin = new sf::Sprite();
+	textureCoin = new sf::Texture();
+	textCoin = new sf::Text();
+
+	if (textureCoin->loadFromFile("../Donnees/Item/Coin.png"))
+	{
+		spriteCoin->setTexture(*textureCoin);
+	}
+
+	textCoin->setFont(*font);
+	textCoin->setString("x" + std::to_string(inventory.GoldCount()));
+	textCoin->setCharacterSize(SIZE_TEXT);
+	textCoin->setFillColor(COLOR_TEXT);
+	textCoin->setPosition(TEXT_COIN_POSITION);
+	drawableCoinText = textCoin;
+
+	spriteCoin->setOrigin(sf::Vector2f(0, 0));
+	spriteCoin->setScale(sf::Vector2f(COIN_SCALE, COIN_SCALE));
+	spriteCoin->setPosition(COIN_POSITION);
+	drawableCoin= spriteCoin;
 
 	//animation
 	samusAnimRight = new Animation(spriteSamus, "../Donnees/Samus/Run_Right_low.png", "../Donnees/Samus/Run_Right.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);

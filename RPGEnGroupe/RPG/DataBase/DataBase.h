@@ -30,14 +30,17 @@
 
 #define POTION_HEAL_POSITION sf::Vector2f(WIDTH-100, 40)
 #define POTION_MANA_POSITION sf::Vector2f(WIDTH-50, 40)
+#define COIN_POSITION sf::Vector2f(WIDTH-30, 8)
 
 #define TEXT_MANA_POSITION sf::Vector2f(WIDTH-30, 65)
 #define TEXT_HEAL_POSITION sf::Vector2f(WIDTH-80, 65)
+#define TEXT_COIN_POSITION sf::Vector2f(WIDTH-55, 10)
 #define COLOR_TEXT sf::Color::White
 #define SIZE_TEXT 15
 
 #define POTION_MANA_SCALE 0.5f
 #define POTION_HEAL_SCALE 0.5f
+#define COIN_SCALE 0.2f
 
 //Starter Pack
 #define START_HEALPOTION_COUNT 0
