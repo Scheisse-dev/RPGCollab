@@ -9,6 +9,8 @@ class GameObject : public Object
 protected:
 	sf::Drawable* drawableSamus = nullptr;
 	sf::Drawable* drawablePalpatine = nullptr;
+	sf::Drawable* drawablePotionMana = nullptr;
+	sf::Drawable* drawablePotionHeal = nullptr;
 
 public:
 	GameObject();
