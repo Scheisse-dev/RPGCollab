@@ -15,13 +15,17 @@
 #define MANA_PER_ATTACK 5
 #define MANA_REGEN 1
 
-
+//Mob
 #define MOB_MAX_LIFE 50
 #define MOB_DAMAGE 15
 
-
+//Potion
 #define HEAL_POTION 5
 #define MANA_POTION 5
+
+//Starter Pack
+#define START_HEALPOTION_COUNT 0
+#define START_MANAPOTION_COUNT 0
 
 //Animation
 
