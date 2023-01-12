@@ -5,10 +5,11 @@
 #include "../GameObject/Manager/RPG_GameObjectManager.h"
 #include "../Samus/RPG_Samus.h"
 #include "../DataBase/DataBase.h"
+#include "../../UI/Manager/UIElementManager.h"
 #include <iostream>
 
 #pragma region constructor
-RPG_Game::RPG_Game() : Window(WIDTH, HEIGHT, "Default")
+RPG_Game::RPG_Game() : Window(WIDTH, HEIGHT, "PALPATOUILLE et la revanche de Samus")
 {
 	InitBackGround();
 }
@@ -51,6 +52,7 @@ void RPG_Game::OnUpdate()
 {
 	try
 	{
+		UIElementManager::Instance()->Update();
 		if (!isStarted)
 			return;
 		RPG_GameObjectManager* _instance = RPG_GameObjectManager::Instance();
@@ -68,7 +70,7 @@ void RPG_Game::InitMenus()
 	RPG_MainMenu* _mainMenu = new RPG_MainMenu(this);
 	_mainMenu->PlayButton()->OnClick.SetDynamic(this, &RPG_Game::Start);
 	_mainMenu->Open();
-	RegisterMenu("main menu", _mainMenu);
+	RegisterMenu(MAIN_MENU, _mainMenu);
 }
 void RPG_Game::OnReceiveEvent(const sf::Event& _event)
 {
