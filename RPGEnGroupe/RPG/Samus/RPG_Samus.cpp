@@ -31,10 +31,10 @@ RPG_Samus::RPG_Samus()
 	spritePalpatine->setPosition(PALPATINE_POSITION);
 	drawablePalpatine = spritePalpatine;
 
-	samusAnimRight = new Animation(spriteSamus, "../Donnees/Samus/Run_Right_low.png", "../Donnees/Samus/Run_Right.png");
+	samusAnimRight = new Animation(spriteSamus, "../Donnees/Samus/Run_Right_low.png", "../Donnees/Samus/Run_Right.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
 	samusAnimRight->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 
-	samusAnimLeft = new Animation(spriteSamus, "../Donnees/Samus/Run_Left_low.png", "../Donnees/Samus/Run_left.png");
+	samusAnimLeft = new Animation(spriteSamus, "../Donnees/Samus/Run_Left_low.png", "../Donnees/Samus/Run_left.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
 	samusAnimLeft->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 }
 RPG_Samus::~RPG_Samus()
