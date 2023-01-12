@@ -106,7 +106,9 @@ void RPG_Samus::OnUpdate()
 {
 	/*if (isDead)
 		return;*/
-	textureSamus->loadFromFile("../Donnees/Samus/NoMove.png");
+	
+
+	
 	if (Input::IsKeyDown(sf::Keyboard::D))
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(SAMUS_SPEED, 0));
@@ -126,6 +128,7 @@ void RPG_Samus::OnUpdate()
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(0, 0.05f));
 	}
+	
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const
 {

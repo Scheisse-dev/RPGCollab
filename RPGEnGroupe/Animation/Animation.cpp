@@ -18,7 +18,6 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 	speed = _speed;
 	sprite = _sprite;
 
-	Anime2Frames();
 }
 
 Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const char* _frame3, const float _initialSpeed, const float _speed)
@@ -43,7 +42,7 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 	speed = _speed; 
 	sprite = _sprite; 
 
-	Anime3Frames();
+	
 }
 
 Animation::~Animation()

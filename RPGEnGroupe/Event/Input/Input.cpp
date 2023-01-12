@@ -23,4 +23,10 @@ bool Input::MouseIsClicked(const sf::Mouse::Button& _button)
 	if (_current == nullptr) return false;
 	return _current->key.code == _button && _current->type == sf::Mouse::Left;
 }
+bool Input::NoKeyPush()
+{
+	const sf::Event* _current = Event::currentEvent;
+	if (_current == nullptr) return false;
+	return  _current->type != sf::Event::KeyReleased;
+}
 #pragma endregion methods
