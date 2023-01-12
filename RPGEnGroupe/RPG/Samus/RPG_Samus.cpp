@@ -66,21 +66,23 @@ void RPG_Samus::OnUpdate()
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(40.0f, 0));
 		samusAnimRight->AnimationUpdate(2);
+		samusAnimRight->clock->restart();
 	}
 	if (Input::IsKeyDown(sf::Keyboard::Q))
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(-40.0f, 0));
 		samusAnimLeft->AnimationUpdate(2);
+		samusAnimLeft->clock->restart();
 	}
 	if (Input::IsKeyDown(sf::Keyboard::Space))
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() - sf::Vector2f(0, JUMP_FORCE));
 	}
 	//position au sol
-	//if (spriteSamus->getPosition().y <= HEIGHT - 125)
-	//{
-	//	spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(0, 0.05f));
-	//}
+	if (spriteSamus->getPosition().y <= HEIGHT - 125)
+	{
+		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(0, 0.05f));
+	}
 	if (Input::IsKeyUp(sf::Keyboard::D) || Input::IsKeyUp(sf::Keyboard::Q))
 	{
 		textureSamus->loadFromFile("../Donnees/Samus/NoMove.png");

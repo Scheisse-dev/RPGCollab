@@ -28,7 +28,6 @@ void RPG_Game::Start()
 	isStarted = true;
 	samus = new RPG_Samus();
 	samus->SetWindowSize(sf::Vector2f(WIDTH, HEIGHT));
-	samus->SetPosition(sf::Vector2f(0, 0));
 	SetBackground("../Donnees/Backgroung_Game.png");
 	background->SetOrigin(sf::Vector2f(0, 0));
 	background->SetPosition(sf::Vector2f(0, 0));
