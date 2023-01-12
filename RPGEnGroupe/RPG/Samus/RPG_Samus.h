@@ -2,7 +2,7 @@
 #include "../GameObject/GameObject.h"
 #include "../../Event/Delegate/Delegate.h"
 
-#define SAMUS_SCALE 0.05f
+#define SAMUS_SCALE 0.2f
 #define GRAVITY 0.5f
 
 class RPG_Samus : public GameObject

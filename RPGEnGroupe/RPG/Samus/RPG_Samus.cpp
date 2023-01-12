@@ -11,7 +11,7 @@ RPG_Samus::RPG_Samus()
 	{
 		sprite->setTexture(*texture);
 	}
-	sprite->setOrigin(sf::Vector2f(0, 0));
+	sprite->setOrigin(sf::Vector2f(HEIGHT /2, 50));
 	sprite->setScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 	drawable = sprite;
 }
@@ -25,17 +25,17 @@ RPG_Samus::~RPG_Samus()
 #pragma endregion
 
 #pragma region override
-void RPG_Samus::Die()
-{
-	if (isDead)
-		return;
-	isDead = true;
-	onDie.Invoke();
-}
+//void RPG_Samus::Die()
+//{
+//	if (isDead)
+//		return;
+//	isDead = true;
+//	onDie.Invoke();
+//}
 void RPG_Samus::OnUpdate()
 {
-	if (isDead)
-		return;
+	/*if (isDead)
+		return;*/
 	if (Input::IsKeyDown(sf::Keyboard::D))
 	{
 		sprite->setPosition(sprite->getPosition() + sf::Vector2f(0.10f, 0));
