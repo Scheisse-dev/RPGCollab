@@ -135,7 +135,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Chest\Chest.cpp" />
-    <ClCompile Include="Entity\Entity.cpp" />
     <ClCompile Include="Event\Input\Input.cpp" />
     <ClCompile Include="Inventory\Inventory.cpp" />
     <ClCompile Include="Item\Gold\Gold.cpp" />
@@ -164,7 +163,6 @@
   <ItemGroup>
     <ClInclude Include="Chest\Chest.h" />
     <ClInclude Include="DataBase\DataBase.h" />
-    <ClInclude Include="Entity\Entity.h" />
     <ClInclude Include="Event\Delegate\Delegate.h" />
     <ClInclude Include="Event\Input\Input.h" />
     <ClInclude Include="Inventory\Inventory.h" />

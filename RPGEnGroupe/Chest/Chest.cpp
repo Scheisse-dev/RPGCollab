@@ -24,10 +24,11 @@ Chest::~Chest()
 	delete texture;
 	texture = nullptr; 
 }
-void Chest::SetPosition()
+void Chest::SetPosition(float _width, float _height)
 {
+
 }
-void Chest::SetScale()
+void Chest::SetScale(float _size)
 {
 }
 #pragma endregion constructor

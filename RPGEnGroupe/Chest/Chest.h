@@ -10,6 +10,7 @@ private:
 	sf::Sprite* sprite = nullptr;
 
 	bool isOpen = false;
+ 
 #pragma endregion f/p
 #pragma region constructor/destructor
 public:
@@ -18,8 +19,9 @@ public:
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
-	void SetPosition();
-	void SetScale(); 
+	void SetPosition(float _width, float _height);
+	void SetScale(float _size); 
+
 #pragma endregion methods
 
 

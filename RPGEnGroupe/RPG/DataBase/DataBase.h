@@ -9,7 +9,7 @@
 #define PLAYER_MAX_LIFE 100
 #define MOB_MAX_LIFE 50
 
-
+#define CHEST_SIZE 0.1f
 
 #define LABEL_FONT ""
 
