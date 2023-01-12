@@ -10,16 +10,21 @@ private:
 	sf::Sprite* sprite = nullptr;
 
 	bool isOpen = false;
+
 #pragma endregion f/p
 #pragma region constructor/destructor
 public:
-	Chest(); 
+	Chest();
 	~Chest(); 
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
-	void SetPosition();
-	void SetScale(); 
+	void SetPosition(float _width, float _height);
+	void SetScale(sf::Vector2f _size);
+	void Update(); 
+	void SetDrop();
+	bool IsOpen();
+
 #pragma endregion methods
 
 
