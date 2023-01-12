@@ -2,7 +2,7 @@
 #include "../GameObject/GameObject.h"
 #include "../../Event/Delegate/Delegate.h"
 
-#define SAMUS_SCALE 0.2f
+#define SAMUS_SCALE 1.0f
 #define GRAVITY 0.5f
 
 class RPG_Samus : public GameObject
@@ -29,6 +29,11 @@ public:
 	virtual sf::FloatRect GetGlobalBounds() const override;
 	virtual sf::Vector2f Position() const override;
 	void SetWindowSize(const sf::Vector2f& _size);
+	void SetPosition(const sf::Vector2f& _position)
+	{
+		if (sprite == nullptr) return;
+		sprite->setPosition(_position);
+	}
 #pragma endregion override
 };
 

@@ -74,6 +74,9 @@ void RPG_Game::InitMenus()
 }
 void RPG_Game::OnReceiveEvent(const sf::Event& _event)
 {
-	Window::OnReceiveEvent(_event);
+	if (_event.type == sf::Event::Resized)
+	{
+		samus->SetWindowSize(sf::Vector2f(WIDTH, HEIGHT));
+	}
 }
 #pragma endregion.
