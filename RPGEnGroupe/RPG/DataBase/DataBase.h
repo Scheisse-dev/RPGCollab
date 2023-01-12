@@ -10,13 +10,8 @@
 #define PLAYER_MAX_LIFE 100
 #define PLAYER_DAMAGE 10
 #define JUMP_FORCE 100
-#define SAMUS_SCALE 1.5f
-#define GRAVITY 0.5f
 #define SAMUS_POSITION sf::Vector2f(50, HEIGHT - 125)
-
-#define PALPATINE_POSITION sf::Vector2f(WIDTH - 125, HEIGHT - 150)
-#define PALPATINE_SCALE 1.0f
-
+#define SAMUS_SPEED 40
 
 #define MANA_PER_ATTACK 5
 #define MANA_REGEN 1
@@ -32,6 +27,7 @@
 //Starter Pack
 #define START_HEALPOTION_COUNT 0
 #define START_MANAPOTION_COUNT 0
+#define START_GOLD_COUNT 0
 
 //Animation
 
