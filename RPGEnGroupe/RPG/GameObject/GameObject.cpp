@@ -9,13 +9,16 @@ GameObject::GameObject()
 
 GameObject::GameObject(const GameObject& _copy)
 {
-	drawable = _copy.drawable;
+	drawableSamus = _copy.drawableSamus;
+	drawablePalpatine = _copy.drawablePalpatine;
 }
 
 GameObject::~GameObject()
 {
-	delete drawable;
-	drawable = nullptr;
+	delete drawableSamus;
+	drawableSamus = nullptr;
+	delete drawablePalpatine;
+	drawablePalpatine = nullptr;
 }
 
 void GameObject::OnUpdate()
@@ -24,7 +27,8 @@ void GameObject::OnUpdate()
 
 void GameObject::OnDraw(Window* _window)
 {
-	_window->Draw(drawable);
+	_window->Draw(drawableSamus);
+	_window->Draw(drawablePalpatine);
 }
 
 void GameObject::OnCollisionEnter(GameObject* _object)
