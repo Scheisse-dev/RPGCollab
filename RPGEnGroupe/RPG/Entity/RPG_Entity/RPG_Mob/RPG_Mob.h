@@ -1,6 +1,8 @@
 #pragma once
 #include "../RPG_Entity.h"
 
+//salut les boys, ça gaze ?
+
 class RPG_Player;
 class Animation;
 
