@@ -38,7 +38,7 @@ public:
 #pragma region override
 public:
 	virtual int Life() const override;
-	virtual int Damage() const override;
+	virtual int Damage() const;
 	virtual std::string Name() const override;
 
 #pragma endregion override
