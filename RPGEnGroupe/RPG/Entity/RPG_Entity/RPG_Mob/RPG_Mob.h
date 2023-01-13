@@ -1,6 +1,7 @@
 #pragma once
 #include "../RPG_Entity.h"
 
+class RPG_Player;
 class Animation;
 
 class RPG_Mob : public RPG_Entity
@@ -13,6 +14,7 @@ private:
 	sf::Sprite* sprite = nullptr; 
 	sf::Texture* texture = nullptr;
 	sf::Vector2f position;
+	sf::Clock clock = sf::Clock();
 	float scale = 0; 
 	const char* path = "";
 	const char* name = "";

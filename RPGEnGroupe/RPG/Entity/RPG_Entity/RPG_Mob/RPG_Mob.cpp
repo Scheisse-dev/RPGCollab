@@ -1,5 +1,6 @@
 #include "RPG_Mob.h"
 #include "../../../../Animation/Animation.h"
+#include "../RPG_Player/RPG_Player.h"
 
 #pragma region constructor/destructor
 RPG_Mob::RPG_Mob(const int _life, const int _damage, const char* _name, const char* _path, const float _scale, sf::Sprite* _sprite, sf::Vector2f _position) : RPG_Entity( _life, _damage, _name)
@@ -82,6 +83,21 @@ void RPG_Mob::Move()
     if(_boucle >= 6.f)
         speed->restart();
 
+    CollisionEnter(sprite, )
+}
+void RPG_Mob::CollisionEnter(sf::Sprite* _spritePlayer, RPG_Player _player)
+{
+    float _invisibility = clock.getElapsedTime().asSeconds();
+
+    if (sprite->getGlobalBounds().intersects(_spritePlayer->getGlobalBounds()))
+    {
+        _player.life - MOB_DAMAGE;
+        clock.restart();
+    }
+    if (_invisibility <= 3.0f)
+    {
+        return;
+    }
 }
 #pragma endregion methods
 #pragma region override
@@ -98,5 +114,8 @@ int RPG_Mob::Damage() const
 std::string RPG_Mob::Name() const
 {
     return name;
+
+
 }
+
 #pragma endregion override
