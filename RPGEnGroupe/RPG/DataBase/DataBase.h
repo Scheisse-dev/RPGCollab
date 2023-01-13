@@ -48,16 +48,28 @@
 
 #define POTION_HEAL_POSITION sf::Vector2f(WIDTH-100, 40)
 #define POTION_MANA_POSITION sf::Vector2f(WIDTH-50, 40)
+
+#define POTION_HEAL_ROD_POSITION sf::Vector2f(5, HEIGHT - 30)
+#define POTION_MANA_ROD_POSITION sf::Vector2f(50, HEIGHT - 37)
+
 #define COIN_POSITION sf::Vector2f(WIDTH-30, 8)
 
 #define TEXT_MANA_POSITION sf::Vector2f(WIDTH-30, 65)
 #define TEXT_HEAL_POSITION sf::Vector2f(WIDTH-80, 65)
+
+#define TEXT_HEAL_ROD_POSITION sf::Vector2f(35, HEIGHT - 22.5f)
+#define TEXT_MANA_ROD_POSITION sf::Vector2f(85, HEIGHT - 22.5f)
+
 #define TEXT_COIN_POSITION sf::Vector2f(WIDTH-55, 10)
 #define COLOR_TEXT sf::Color::White
 #define SIZE_TEXT 15
 
 #define POTION_MANA_SCALE 0.5f
 #define POTION_HEAL_SCALE 0.5f
+
+#define POTION_MANA_ROD_SCALE 0.07f
+#define POTION_HEAL_ROD_SCALE 0.02f
+
 #define COIN_SCALE 0.2f
 
 //Items

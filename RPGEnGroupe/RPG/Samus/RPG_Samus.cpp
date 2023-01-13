@@ -126,6 +126,52 @@ RPG_Samus::RPG_Samus()
 	drawablePotionHeal = spritePotionHeal;
 #pragma endregion
 
+#pragma region display Rod Mana
+	spritePotionManaRod = new sf::Sprite();
+	texturePotionManaRod = new sf::Texture();
+	textManaRod = new sf::Text();
+
+	if (texturePotionManaRod->loadFromFile("../Donnees/Item/Rod_Mana.png"))
+	{
+		spritePotionManaRod->setTexture(*texturePotionManaRod);
+	}
+
+	textManaRod->setFont(*font);
+	textManaRod->setString("100");
+	textManaRod->setCharacterSize(SIZE_TEXT);
+	textManaRod->setFillColor(COLOR_TEXT);
+	textManaRod->setPosition(TEXT_MANA_ROD_POSITION);
+	drawablePotionManaTextRod = textManaRod;
+
+	spritePotionManaRod->setOrigin(sf::Vector2f(0, 0));
+	spritePotionManaRod->setScale(sf::Vector2f(POTION_MANA_ROD_SCALE, POTION_MANA_ROD_SCALE));
+	spritePotionManaRod->setPosition(POTION_MANA_ROD_POSITION);
+	drawablePotionManaRod = spritePotionManaRod;
+#pragma endregion
+
+#pragma region display Rod Heal
+	spritePotionHealRod = new sf::Sprite();
+	texturePotionHealRod = new sf::Texture();
+	textHealRod = new sf::Text();
+
+	if (texturePotionHealRod->loadFromFile("../Donnees/Item/Rod_Heal.png"))
+	{
+		spritePotionHealRod->setTexture(*texturePotionHealRod);
+	}
+
+	textHealRod->setFont(*font);
+	textHealRod->setString("90");
+	textHealRod->setCharacterSize(SIZE_TEXT);
+	textHealRod->setFillColor(COLOR_TEXT);
+	textHealRod->setPosition(TEXT_HEAL_ROD_POSITION);
+	drawablePotionHealTextRod = textHealRod;
+
+	spritePotionHealRod->setOrigin(sf::Vector2f(0, 0));
+	spritePotionHealRod->setScale(sf::Vector2f(POTION_HEAL_ROD_SCALE, POTION_HEAL_ROD_SCALE));
+	spritePotionHealRod->setPosition(POTION_HEAL_ROD_POSITION);
+	drawablePotionHealRod = spritePotionHealRod;
+#pragma endregion
+
 #pragma region Coin
 	spriteCoin = new sf::Sprite();
 	textureCoin = new sf::Texture();
@@ -209,6 +255,16 @@ RPG_Samus::~RPG_Samus()
 	delete texturePotionMana;
 	texturePotionMana = nullptr;
 
+	delete spritePotionHealRod;
+	spritePotionHealRod = nullptr;
+	delete texturePotionHealRod;
+	texturePotionHealRod = nullptr;
+
+	delete spritePotionManaRod;
+	spritePotionManaRod = nullptr;
+	delete texturePotionManaRod;
+	texturePotionManaRod = nullptr;
+
 	delete spriteChest;
 	spriteChest = nullptr;
 	delete textureChest;
@@ -268,6 +324,13 @@ void RPG_Samus::OnUpdate()
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(0, 0.05f));
 	}
 #pragma endregion
+
+#pragma region collision
+	/*if (spriteSamus->getPosition().y <= 50)
+	{
+		spriteSamus->setPosition(spriteSamus->getPosition() + PLATFORME1_POSITION);
+	}*/
+#pragma endregion
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const
 {
@@ -291,4 +354,3 @@ void RPG_Samus::OnDraw(Window* _window)
 	GameObject::OnDraw(_window);
 }
 #pragma endregion
-

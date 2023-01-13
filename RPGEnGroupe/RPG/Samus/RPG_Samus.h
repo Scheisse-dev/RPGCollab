@@ -27,10 +27,16 @@ private:
 	sf::Text* textMana = nullptr;
 	sf::Sprite* spritePotionMana = nullptr;
 	sf::Texture* texturePotionMana = nullptr;
+	sf::Sprite* spritePotionManaRod = nullptr;
+	sf::Texture* texturePotionManaRod = nullptr;
+	sf::Text* textManaRod = nullptr;
 
 	sf::Text* textHeal = nullptr;
 	sf::Sprite* spritePotionHeal = nullptr;
 	sf::Texture* texturePotionHeal = nullptr;
+	sf::Sprite* spritePotionHealRod = nullptr;
+	sf::Texture* texturePotionHealRod = nullptr;
+	sf::Text* textHealRod = nullptr;
 
 	sf::Text* textCoin = nullptr;
 	sf::Sprite* spriteCoin = nullptr;
