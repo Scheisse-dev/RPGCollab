@@ -8,14 +8,25 @@
 #pragma region constructor
 Chest::Chest()
 {
-
+	sprite = new sf::Sprite();
+	texture = new sf::Texture();
+	if (texture->loadFromFile("D:/Github/Yoni/MyThirdProject/SFML1stProject/FlappyBird/flappy.png"))
+	{
+		sprite->setTexture(*texture);
+	}
+	sprite->setOrigin(CHEST_POSITION);
+	sprite->setScale(sf::Vector2f(CHEST_SCALE, CHEST_SCALE));
+	drawableChest = sprite;
 }
 
 
 
 Chest::~Chest()
 {
-	
+	delete sprite;
+	sprite = nullptr;
+	delete texture;
+	texture = nullptr;
 }
 #pragma endregion constructor
 #pragma region methods

@@ -1,12 +1,13 @@
 #pragma once
-#include "../RPG/GameObject/Manager/RPG_GameObjectManager.h"
+#include "../RPG/GameObject/GameObject.h"
 #include <SFML/Graphics.hpp>
 
-class Chest : public RPG_GameObjectManager
+class Chest : public GameObject
 {
 #pragma region f/p
 private:
-	
+	sf::Sprite* sprite = nullptr;
+	sf::Texture* texture = nullptr;
 
 protected :
 	bool isOpen = false;
