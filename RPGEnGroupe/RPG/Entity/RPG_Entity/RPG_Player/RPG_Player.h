@@ -9,7 +9,7 @@ private:
 #pragma region constructor/destructor
 public:
 	RPG_Player() = default;
-	RPG_Player(const int _life, const int _damage, const char* _name, const int _mana);
+	RPG_Player(const int _life, const char* _name, const int _mana);
 	RPG_Player(const RPG_Player& _copy);
 	~RPG_Player() override;
 #pragma endregion constructor/destructor

@@ -1,9 +1,8 @@
 #include "RPG_Entity.h"
 
-RPG_Entity::RPG_Entity(const int _life, const int _damage, const char* _name)
+RPG_Entity::RPG_Entity(const int _life, const char* _name)
 {
 	life = _life;
-	damage = _damage;
 	name = _name;
 }
 
