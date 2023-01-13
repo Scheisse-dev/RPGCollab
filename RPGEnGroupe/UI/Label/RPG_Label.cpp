@@ -44,6 +44,11 @@ void RPG_Label::SetColor(const sf::Color& _color)
 	text->setFillColor(_color);
 }
 
+void RPG_Label::SetFont(const sf::Font& _font)
+{
+	text->setFont(_font);
+}
+
 void RPG_Label::SetText(const char* _text)
 {
 	text->setString(_text);
