@@ -6,9 +6,9 @@ Gold::Gold(const Gold& _copy) : RPG_Item(_copy) {}
 
 Gold::~Gold() {}
 
-std::string Gold::Name() const
+int Gold::ID() const
 {
-    return "One Coin";
+    return 3;
 }
 
 int Gold::Value() const

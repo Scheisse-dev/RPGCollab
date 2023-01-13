@@ -4,7 +4,7 @@ class RPG_Item : public Object
 {
 #pragma region f/p
 private:
-	std::string name = "";
+	int id = 0;
 	int value = 0;
 #pragma endregion f/p
 #pragma region constructor/destructor
@@ -17,7 +17,7 @@ public:
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
-	virtual std::string Name() const = 0;
+	virtual int ID() const = 0;
 	virtual int Value() const = 0;
 #pragma endregion methods
 #pragma region override

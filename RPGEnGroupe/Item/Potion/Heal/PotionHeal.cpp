@@ -8,9 +8,9 @@ PotionHeal::~PotionHeal()
 {
 }
 
-std::string PotionHeal::Name() const
+int PotionHeal::ID() const
 {
-    return "Heal Potion";
+    return 1;
 }
 
 int PotionHeal::Value() const

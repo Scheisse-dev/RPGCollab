@@ -6,9 +6,9 @@ PotionMana::PotionMana(const PotionMana& _copy) {}
 
 PotionMana::~PotionMana() {}
 
-std::string PotionMana::Name() const
+int PotionMana::ID() const
 {
-    return "Mana Potion";
+    return 2;
 }
 
 int PotionMana::Value() const

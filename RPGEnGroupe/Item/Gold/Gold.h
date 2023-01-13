@@ -19,7 +19,7 @@ public:
 #pragma endregion methods
 #pragma region override
 public:
-	virtual std::string Name() const override;
+	virtual int ID() const override;
 	virtual int Value() const override;
 
 #pragma endregion override
