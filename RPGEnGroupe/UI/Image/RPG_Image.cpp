@@ -10,7 +10,7 @@ RPG_Image::RPG_Image(Window* _owner, const char* _path) : RPG_UIElement(_owner)
         Free();
         return;
     }
-    sprite->setTexture(*texture);
+    SetTexture(*texture);
 }
 
 RPG_Image::RPG_Image(const RPG_Image& _copy) : RPG_UIElement(_copy)
@@ -35,6 +35,10 @@ void RPG_Image::Free()
 sf::FloatRect RPG_Image::GlobalBounds() const
 {
     return sprite->getGlobalBounds();
+}
+void RPG_Image::SetTexture(sf::Texture _texture) const
+{
+    sprite->setTexture(*texture);
 }
 #pragma endregion methods
 #pragma region override
