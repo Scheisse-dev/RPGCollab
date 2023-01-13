@@ -1,5 +1,8 @@
 #include "Chest.h"
 #include "../RPG/Game/RPG_Game.h"
+#include "../Inventory/Inventory.h"
+#include "../Item/RPG_Item.h"
+
 
 #pragma region constructor
 Chest::Chest()
@@ -47,11 +50,8 @@ void Chest::Update()
 
 void Chest::SetDrop()
 {
-	int numberOfObject = std::rand() % 2 + 1;
-	int typeOfObject = std::rand() % 3 + 1;
-
-
-	//TODO object to drop
+	//TODO
+	
 
 }
 
