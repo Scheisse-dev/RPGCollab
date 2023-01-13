@@ -1,10 +1,12 @@
 #pragma once
-#include "../GameObject/GameObject.h"
+#include "../../Window/Window.h"
 #include "../../Event/Delegate/Delegate.h"
 
 class Animation;
+class RPG_Image;
+class RPG_Label;
 
-class RPG_Samus : public GameObject
+class RPG_Samus : public Window
 {
 #pragma region f/p
 private:
@@ -12,38 +14,27 @@ private:
 
 	sf::Font* font = nullptr;
 
-	sf::Sprite* spritePlatforme1 = nullptr;
-	sf::Texture* texturePlatforme1 = nullptr;
-	sf::Sprite* spritePlatforme2 = nullptr;
-	sf::Texture* texturePlatforme2 = nullptr;
-	sf::Sprite* spritePlatforme3 = nullptr;
-	sf::Texture* texturePlatforme3 = nullptr;
-	sf::Sprite* spritePlatforme4 = nullptr;
-	sf::Texture* texturePlatforme4 = nullptr;
+	RPG_Image* Platforme1 = nullptr;
+	RPG_Image* Platforme2 = nullptr;
+	RPG_Image* Platforme3 = nullptr;
+	RPG_Image* Platforme4 = nullptr;
 
-	sf::Sprite* spriteSamus = nullptr;
-	sf::Texture* textureSamus = nullptr;
+	RPG_Image* Samus = nullptr;
 
-	sf::Text* textMana = nullptr;
-	sf::Sprite* spritePotionMana = nullptr;
-	sf::Texture* texturePotionMana = nullptr;
-	sf::Sprite* spritePotionManaRod = nullptr;
-	sf::Texture* texturePotionManaRod = nullptr;
-	sf::Text* textManaRod = nullptr;
+	RPG_Label* textMana = nullptr;
+	RPG_Label* textManaRod = nullptr;
+	RPG_Image* PotionMana = nullptr;
+	RPG_Image* PotionManaRod = nullptr;
 
-	sf::Text* textHeal = nullptr;
-	sf::Sprite* spritePotionHeal = nullptr;
-	sf::Texture* texturePotionHeal = nullptr;
-	sf::Sprite* spritePotionHealRod = nullptr;
-	sf::Texture* texturePotionHealRod = nullptr;
-	sf::Text* textHealRod = nullptr;
+	RPG_Label* textHeal = nullptr;
+	RPG_Label* textHealRod = nullptr;
+	RPG_Image* PotionHeal = nullptr;
+	RPG_Image* PotionHealRod = nullptr;
 
-	sf::Text* textCoin = nullptr;
-	sf::Sprite* spriteCoin = nullptr;
-	sf::Texture* textureCoin = nullptr;
+	RPG_Label* textCoin = nullptr;
+	RPG_Image* Coin = nullptr;
 
-	sf::Sprite* spriteChest = nullptr;
-	sf::Texture* textureChest = nullptr;
+	RPG_Image* Chest = nullptr;
 
 	sf::Vector2f windowSize = sf::Vector2f();
 
@@ -62,11 +53,9 @@ private:
 	//void Die();
 public:
 	virtual void OnUpdate() override;
-	virtual sf::FloatRect GetGlobalBounds() const override;
-	virtual sf::Vector2f Position() const override;
 	void SetWindowSize(const sf::Vector2f& _size);
 	void SetPosition(const sf::Vector2f& _position);
+	virtual void OnDraw() override;
 #pragma endregion override
-	virtual void OnDraw(Window* _window) override;
 };
 

@@ -2,9 +2,11 @@
 #include "../../Time/Time.h"
 #include "../../Event/Input/Input.h"
 #include "../../UI/Image/RPG_Image.h"
+#include "../../UI/Label/RPG_Label.h"
 #include "../../Animation/Animation.h"
 #include "../../Inventory/Inventory.h"
 #include <iostream>
+#include <string>
 
 #pragma region constructor
 RPG_Samus::RPG_Samus()
@@ -18,257 +20,158 @@ RPG_Samus::RPG_Samus()
 #pragma endregion
 
 #pragma region platforme
-	spritePlatforme1 = new sf::Sprite();
-	texturePlatforme1 = new sf::Texture();
-	spritePlatforme2 = new sf::Sprite();
-	texturePlatforme2 = new sf::Texture();
-	spritePlatforme3 = new sf::Sprite();
-	texturePlatforme3 = new sf::Texture();
-	spritePlatforme4 = new sf::Sprite();
-	texturePlatforme4 = new sf::Texture();
+	Platforme1 = new RPG_Image(this, "../Donnees/Sol.png");
+	Platforme2 = new RPG_Image(this, "../Donnees/Sol.png");
+	Platforme3 = new RPG_Image(this, "../Donnees/Sol.png");
+	Platforme4 = new RPG_Image(this, "../Donnees/Sol.png");
 
-	if (texturePlatforme1->loadFromFile("../Donnees/Sol.png"))
-	{
-		spritePlatforme1->setTexture(*texturePlatforme1);
-	}
-	if (texturePlatforme2->loadFromFile("../Donnees/Sol.png"))
-	{
-		spritePlatforme2->setTexture(*texturePlatforme2);
-	}
-	if (texturePlatforme3->loadFromFile("../Donnees/Sol.png"))
-	{
-		spritePlatforme3->setTexture(*texturePlatforme1);
-	}
-	if (texturePlatforme4->loadFromFile("../Donnees/Sol.png"))
-	{
-		spritePlatforme4->setTexture(*texturePlatforme1);
-	}
+	Platforme1->SetOrigin(sf::Vector2f(0, 0));
+	Platforme1->SetScale(sf::Vector2f(PLATFORME1_SCALE, PLATFORME1_SCALE));
+	Platforme1->SetPosition(PLATFORME1_POSITION);
 
-	spritePlatforme1->setOrigin(sf::Vector2f(0, 0));
-	spritePlatforme1->setScale(sf::Vector2f(PLATFORME1_SCALE, PLATFORME1_SCALE));
-	spritePlatforme1->setPosition(PLATFORME1_POSITION);
-	drawablePlatforme1 = spritePlatforme1;
+	Platforme2->SetOrigin(sf::Vector2f(0, 0));
+	Platforme2->SetScale(sf::Vector2f(PLATFORME2_SCALE, PLATFORME2_SCALE));
+	Platforme2->SetPosition(PLATFORME2_POSITION);
 
-	spritePlatforme2->setOrigin(sf::Vector2f(0, 0));
-	spritePlatforme2->setScale(sf::Vector2f(PLATFORME2_SCALE, PLATFORME2_SCALE));
-	spritePlatforme2->setPosition(PLATFORME2_POSITION);
-	drawablePlatforme2 = spritePlatforme2;
+	Platforme3->SetOrigin(sf::Vector2f(0, 0));
+	Platforme3->SetScale(sf::Vector2f(PLATFORME3_SCALE, PLATFORME3_SCALE));
+	Platforme3->SetPosition(PLATFORME3_POSITION);
 
-	spritePlatforme3->setOrigin(sf::Vector2f(0, 0));
-	spritePlatforme3->setScale(sf::Vector2f(PLATFORME3_SCALE, PLATFORME3_SCALE));
-	spritePlatforme3->setPosition(PLATFORME3_POSITION);
-	drawablePlatforme3 = spritePlatforme3;
-
-	spritePlatforme4->setOrigin(sf::Vector2f(0, 0));
-	spritePlatforme4->setScale(sf::Vector2f(PLATFORME4_SCALE, PLATFORME4_SCALE));
-	spritePlatforme4->setPosition(PLATFORME4_POSITION);
-	drawablePlatforme4 = spritePlatforme4;
+	Platforme4->SetOrigin(sf::Vector2f(0, 0));
+	Platforme4->SetScale(sf::Vector2f(PLATFORME4_SCALE, PLATFORME4_SCALE));
+	Platforme4->SetPosition(PLATFORME4_POSITION);
 #pragma endregion
 
 #pragma region samus
-	spriteSamus = new sf::Sprite();
-	textureSamus = new sf::Texture();
+	Samus = new RPG_Image(this, "../Donnees/Samus/NoMove.png");
 
-	if (textureSamus->loadFromFile("../Donnees/Samus/NoMove.png"))
-	{
-		spriteSamus->setTexture(*textureSamus);
-	}
-
-	spriteSamus->setOrigin(sf::Vector2f(0, 0));
-	spriteSamus->setScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
-	spriteSamus->setPosition(SAMUS_POSITION);
-	drawableSamus = spriteSamus;
+	Samus->SetOrigin(sf::Vector2f(0, 0));
+	Samus->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
+	Samus->SetPosition(SAMUS_POSITION);
 #pragma endregion
 
 #pragma region Potion Mana
-	spritePotionMana = new sf::Sprite();
-	texturePotionMana = new sf::Texture();
-	textMana = new sf::Text();
+	PotionMana = new RPG_Image(this, "../Donnees/Item/Potion_Mana.png");
+	textMana = new RPG_Label(this, "../Donnees/Fonts/Ubuntu-Title.ttf");
 
-	if (texturePotionMana->loadFromFile("../Donnees/Item/Potion_Mana.png"))
-	{
-		spritePotionMana->setTexture(*texturePotionMana);
-	}
+	textMana->SetFont(*font);
+	textMana->SetText(("x" + std::to_string(inventory.ManaPotionCount())).c_str());
+	textMana->SetCharacterSize(SIZE_TEXT);
+	textMana->SetColor(COLOR_TEXT);
+	textMana->SetPosition(TEXT_MANA_POSITION);
 
-	textMana->setFont(*font);
-	textMana->setString("x" + std::to_string(inventory.ManaPotionCount()));
-	textMana->setCharacterSize(SIZE_TEXT);
-	textMana->setFillColor(COLOR_TEXT);
-	textMana->setPosition(TEXT_MANA_POSITION);
-	drawablePotionManaText = textMana;
-
-	spritePotionMana->setOrigin(sf::Vector2f(0, 0));
-	spritePotionMana->setScale(sf::Vector2f(POTION_MANA_SCALE, POTION_MANA_SCALE));
-	spritePotionMana->setPosition(POTION_MANA_POSITION);
-	drawablePotionMana = spritePotionMana;
+	PotionMana->SetOrigin(sf::Vector2f(0, 0));
+	PotionMana->SetScale(sf::Vector2f(POTION_MANA_SCALE, POTION_MANA_SCALE));
+	PotionMana->SetPosition(POTION_MANA_POSITION);
 #pragma endregion
 
 #pragma region Potion Heal
-	spritePotionHeal = new sf::Sprite();
-	texturePotionHeal = new sf::Texture();
-	textHeal = new sf::Text();
+	PotionHeal = new RPG_Image(this, "../Donnees/Item/Potion_Heal.png");
+	textHeal = new RPG_Label(this, "../Donnees/Fonts/Ubuntu-Title.ttf");
 
-	if (texturePotionHeal->loadFromFile("../Donnees/Item/Potion_Heal.png"))
-	{
-		spritePotionHeal->setTexture(*texturePotionHeal);
-	}
+	textHeal->SetFont(*font);
+	textHeal->SetText(("x" + std::to_string(inventory.HealPotionCount())).c_str());
+	textHeal->SetCharacterSize(SIZE_TEXT);
+	textHeal->SetColor(COLOR_TEXT);
+	textHeal->SetPosition(TEXT_HEAL_POSITION);
 
-	textHeal->setFont(*font);
-	textHeal->setString("x" + std::to_string(inventory.HealPotionCount()));
-	textHeal->setCharacterSize(SIZE_TEXT);
-	textHeal->setFillColor(COLOR_TEXT);
-	textHeal->setPosition(TEXT_HEAL_POSITION);
-	drawablePotionHealText = textHeal;
-
-	spritePotionHeal->setOrigin(sf::Vector2f(0, 0));
-	spritePotionHeal->setScale(sf::Vector2f(POTION_HEAL_SCALE, POTION_HEAL_SCALE));
-	spritePotionHeal->setPosition(POTION_HEAL_POSITION);
-	drawablePotionHeal = spritePotionHeal;
+	PotionHeal->SetOrigin(sf::Vector2f(0, 0));
+	PotionHeal->SetScale(sf::Vector2f(POTION_HEAL_SCALE, POTION_HEAL_SCALE));
+	PotionHeal->SetPosition(POTION_HEAL_POSITION);
 #pragma endregion
 
 #pragma region display Rod Mana
-	spritePotionManaRod = new sf::Sprite();
-	texturePotionManaRod = new sf::Texture();
-	textManaRod = new sf::Text();
+	PotionManaRod = new RPG_Image(this, "../Donnees/Item/Rod_Mana.png");
+	textManaRod = new RPG_Label(this, "../Donnees/Fonts/Ubuntu-Title.ttf");
 
-	if (texturePotionManaRod->loadFromFile("../Donnees/Item/Rod_Mana.png"))
-	{
-		spritePotionManaRod->setTexture(*texturePotionManaRod);
-	}
+	textManaRod->SetFont(*font);
+	textManaRod->SetText("100");
+	textManaRod->SetCharacterSize(SIZE_TEXT);
+	textManaRod->SetColor(COLOR_TEXT);
+	textManaRod->SetPosition(TEXT_MANA_ROD_POSITION);
 
-	textManaRod->setFont(*font);
-	textManaRod->setString("100");
-	textManaRod->setCharacterSize(SIZE_TEXT);
-	textManaRod->setFillColor(COLOR_TEXT);
-	textManaRod->setPosition(TEXT_MANA_ROD_POSITION);
-	drawablePotionManaTextRod = textManaRod;
-
-	spritePotionManaRod->setOrigin(sf::Vector2f(0, 0));
-	spritePotionManaRod->setScale(sf::Vector2f(POTION_MANA_ROD_SCALE, POTION_MANA_ROD_SCALE));
-	spritePotionManaRod->setPosition(POTION_MANA_ROD_POSITION);
-	drawablePotionManaRod = spritePotionManaRod;
+	PotionManaRod->SetOrigin(sf::Vector2f(0, 0));
+	PotionManaRod->SetScale(sf::Vector2f(POTION_MANA_ROD_SCALE, POTION_MANA_ROD_SCALE));
+	PotionManaRod->SetPosition(POTION_MANA_ROD_POSITION);
 #pragma endregion
 
 #pragma region display Rod Heal
-	spritePotionHealRod = new sf::Sprite();
-	texturePotionHealRod = new sf::Texture();
-	textHealRod = new sf::Text();
+	PotionHealRod = new RPG_Image(this, "../Donnees/Item/Rod_Heal.png");
+	textHealRod = new RPG_Label(this, "../Donnees/Fonts/Ubuntu-Title.ttf");
 
-	if (texturePotionHealRod->loadFromFile("../Donnees/Item/Rod_Heal.png"))
-	{
-		spritePotionHealRod->setTexture(*texturePotionHealRod);
-	}
+	textHealRod->SetFont(*font);
+	textHealRod->SetText("100");
+	textHealRod->SetCharacterSize(SIZE_TEXT);
+	textHealRod->SetColor(COLOR_TEXT);
+	textHealRod->SetPosition(TEXT_HEAL_ROD_POSITION);
 
-	textHealRod->setFont(*font);
-	textHealRod->setString("100");
-	textHealRod->setCharacterSize(SIZE_TEXT);
-	textHealRod->setFillColor(COLOR_TEXT);
-	textHealRod->setPosition(TEXT_HEAL_ROD_POSITION);
-	drawablePotionHealTextRod = textHealRod;
-
-	spritePotionHealRod->setOrigin(sf::Vector2f(0, 0));
-	spritePotionHealRod->setScale(sf::Vector2f(POTION_HEAL_ROD_SCALE, POTION_HEAL_ROD_SCALE));
-	spritePotionHealRod->setPosition(POTION_HEAL_ROD_POSITION);
-	drawablePotionHealRod = spritePotionHealRod;
+	PotionHealRod->SetOrigin(sf::Vector2f(0, 0));
+	PotionHealRod->SetScale(sf::Vector2f(POTION_HEAL_ROD_SCALE, POTION_HEAL_ROD_SCALE));
+	PotionHealRod->SetPosition(POTION_HEAL_ROD_POSITION);
 #pragma endregion
 
 #pragma region Coin
-	spriteCoin = new sf::Sprite();
-	textureCoin = new sf::Texture();
-	textCoin = new sf::Text();
+	Coin = new RPG_Image(this, "../Donnees/Item/Coin.png");
+	textCoin = new RPG_Label(this, "../Donnees/Fonts/Ubuntu-Title.ttf");
 
-	if (textureCoin->loadFromFile("../Donnees/Item/Coin.png"))
-	{
-		spriteCoin->setTexture(*textureCoin);
-	}
+	textCoin->SetFont(*font);
+	textCoin->SetText(("x" + std::to_string(inventory.GoldCount())).c_str());
+	textCoin->SetCharacterSize(SIZE_TEXT);
+	textCoin->SetColor(COLOR_TEXT);
+	textCoin->SetPosition(TEXT_COIN_POSITION);
 
-	textCoin->setFont(*font);
-	textCoin->setString("x" + std::to_string(inventory.GoldCount()));
-	textCoin->setCharacterSize(SIZE_TEXT);
-	textCoin->setFillColor(COLOR_TEXT);
-	textCoin->setPosition(TEXT_COIN_POSITION);
-	drawableCoinText = textCoin;
-
-	spriteCoin->setOrigin(sf::Vector2f(0, 0));
-	spriteCoin->setScale(sf::Vector2f(COIN_SCALE, COIN_SCALE));
-	spriteCoin->setPosition(COIN_POSITION);
-	drawableCoin = spriteCoin;
+	Coin->SetOrigin(sf::Vector2f(0, 0));
+	Coin->SetScale(sf::Vector2f(COIN_SCALE, COIN_SCALE));
+	Coin->SetPosition(COIN_POSITION);
 #pragma endregion
 
 #pragma region Chest
-	spriteChest = new sf::Sprite();
-	textureChest = new sf::Texture();
+	Chest = new RPG_Image(this, "../Donnees/chestClose.png");
 
-	if (textureChest->loadFromFile("../Donnees/chestClose.png"))
-	{
-		spriteChest->setTexture(*textureChest);
-	}
-
-	spriteChest->setOrigin(sf::Vector2f(0, 0));
-	spriteChest->setScale(sf::Vector2f(CHEST_SCALE, CHEST_SCALE));
-	spriteChest->setPosition(CHEST_POSITION);
-	drawableChest = spriteChest;
+	Chest->SetOrigin(sf::Vector2f(0, 0));
+	Chest->SetScale(sf::Vector2f(CHEST_SCALE, CHEST_SCALE));
+	Chest->SetPosition(CHEST_POSITION);
 #pragma endregion
 
 #pragma region Animation
-	samusAnimRight = new Animation(spriteSamus, "../Donnees/Samus/Run_Right_low.png", "../Donnees/Samus/Run_Right.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
+	samusAnimRight = new Animation(Samus, "../Donnees/Samus/Run_Right_low.png", "../Donnees/Samus/Run_Right.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
 	samusAnimRight->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 
-	samusAnimLeft = new Animation(spriteSamus, "../Donnees/Samus/Run_Left_low.png", "../Donnees/Samus/Run_left.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
+	samusAnimLeft = new Animation(Samus, "../Donnees/Samus/Run_Left_low.png", "../Donnees/Samus/Run_left.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
 	samusAnimLeft->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 #pragma endregion
 }
 RPG_Samus::~RPG_Samus()
 {
-	delete spritePlatforme1;
-	spritePlatforme1 = nullptr;
-	delete texturePlatforme1;
-	texturePlatforme1 = nullptr;
+	delete Platforme1;
+	Platforme1 = nullptr;
 
-	delete spritePlatforme2;
-	spritePlatforme2 = nullptr;
-	delete texturePlatforme2;
-	texturePlatforme2 = nullptr;
+	delete Platforme2;
+	Platforme2 = nullptr;
 
-	delete spritePlatforme3;
-	spritePlatforme3 = nullptr;
-	delete texturePlatforme3;
-	texturePlatforme3 = nullptr;
+	delete Platforme3;
+	Platforme3 = nullptr;
 
-	delete spritePlatforme4;
-	spritePlatforme4 = nullptr;
-	delete texturePlatforme4;
-	texturePlatforme4 = nullptr;
+	delete Platforme4;
+	Platforme4 = nullptr;
 
-	delete spriteSamus;
-	spriteSamus = nullptr;
-	delete textureSamus;
-	textureSamus = nullptr;
+	delete Samus;
+	Samus = nullptr;
 
-	delete spritePotionHeal;
-	spritePotionHeal = nullptr;
-	delete texturePotionHeal;
-	texturePotionHeal = nullptr;
+	delete PotionHeal;
+	PotionHeal = nullptr;
 
-	delete spritePotionMana;
-	spritePotionMana = nullptr;
-	delete texturePotionMana;
-	texturePotionMana = nullptr;
+	delete PotionMana;
+	PotionMana = nullptr;
 
-	delete spritePotionHealRod;
-	spritePotionHealRod = nullptr;
-	delete texturePotionHealRod;
-	texturePotionHealRod = nullptr;
+	delete PotionHealRod;
+	PotionHealRod = nullptr;
 
-	delete spritePotionManaRod;
-	spritePotionManaRod = nullptr;
-	delete texturePotionManaRod;
-	texturePotionManaRod = nullptr;
+	delete PotionManaRod;
+	PotionManaRod = nullptr;
 
-	delete spriteChest;
-	spriteChest = nullptr;
-	delete textureChest;
-	textureChest = nullptr;
+	delete Chest;
+	Chest = nullptr;
 }
 #pragma endregion
 
@@ -285,17 +188,17 @@ void RPG_Samus::OnUpdate()
 #pragma region touche move
 	if (Input::IsKeyDown(sf::Keyboard::D))
 	{
-		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(SAMUS_SPEED, 0));
+		Samus->SetPosition(Samus->GetPosition() + sf::Vector2f(SAMUS_SPEED, 0));
 		samusAnimRight->AnimationUpdate(2);
 	}
 	if (Input::IsKeyDown(sf::Keyboard::Q))
 	{
-		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(-SAMUS_SPEED, 0));
+		Samus->SetPosition(Samus->GetPosition() + sf::Vector2f(-SAMUS_SPEED, 0));
 		samusAnimLeft->AnimationUpdate(2);
 	}
 	if (Input::IsKeyDown(sf::Keyboard::Space))
 	{
-		spriteSamus->setPosition(spriteSamus->getPosition() - sf::Vector2f(0, JUMP_FORCE));
+		Samus->SetPosition(Samus->GetPosition() - sf::Vector2f(0, JUMP_FORCE));
 	}
 #pragma endregion
 
@@ -308,7 +211,7 @@ void RPG_Samus::OnUpdate()
 	{
 		std::cout << "Mana !" << std::endl;
 	}
-	if (spriteSamus->getGlobalBounds().intersects(spriteChest->getGlobalBounds()) && Input::IsKeyDown(sf::Keyboard::F))
+	if (Samus->GetGlobalBounds().intersects(Chest->GetGlobalBounds()) && Input::IsKeyDown(sf::Keyboard::F))
 	{
 		std::cout << "Open chest !" << std::endl;
 	}
@@ -319,9 +222,9 @@ void RPG_Samus::OnUpdate()
 #pragma endregion
 
 #pragma region set position sol 
-	if (spriteSamus->getPosition().y <= HEIGHT - 140)
+	if (Samus->GetPosition().y <= HEIGHT - 140)
 	{
-		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(0, 0.05f));
+		Samus->SetPosition(Samus->GetPosition() + sf::Vector2f(0, 0.05f));
 	}
 #pragma endregion
 
@@ -332,25 +235,11 @@ void RPG_Samus::OnUpdate()
 	}*/
 #pragma endregion
 }
-sf::FloatRect RPG_Samus::GetGlobalBounds() const
-{
-	return spriteSamus->getGlobalBounds();
-}
-sf::Vector2f RPG_Samus::Position() const
-{
-	return spriteSamus->getPosition();
-}
 void RPG_Samus::SetWindowSize(const sf::Vector2f& _size)
 {
 	windowSize = _size;
 }
-void RPG_Samus::SetPosition(const sf::Vector2f& _position)
+void RPG_Samus::OnDraw()
 {
-	if (spriteSamus == nullptr) return;
-	spriteSamus->setPosition(_position);
-}
-void RPG_Samus::OnDraw(Window* _window)
-{
-	GameObject::OnDraw(_window);
 }
 #pragma endregion
