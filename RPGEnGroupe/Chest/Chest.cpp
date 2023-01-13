@@ -68,7 +68,7 @@ std::map<int, int> Chest::SetQuantityToItems(std::vector<int> _itemTypes)
 
 void Chest::SetDrop(int _quantityOfItemMax)
 {
-	SetQuantityToItems(ChooseWichItems(ChooseNumberTypeOfItems(_quantityOfItemMax)))
+	SetQuantityToItems(ChooseWichItems(ChooseNumberTypeOfItems(_quantityOfItemMax)));
 	
 
 }
