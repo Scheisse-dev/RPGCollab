@@ -23,6 +23,7 @@
 #define MOB_DAMAGE 15
 #define PALPATINE_POSITION sf::Vector2f(WIDTH-125, HEIGHT - 125)
 #define PALPATINE_SCALE 0.8f
+#define MOB_SPEED 10
 
 //Potion
 #define HEAL_POTION 5
