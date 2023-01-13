@@ -18,6 +18,7 @@ private:
 	void Free();
 public:
 	sf::FloatRect GlobalBounds() const;
+	void SetTexture(sf::Texture _texture) const; 
 #pragma endregion methods
 #pragma region override
 public:

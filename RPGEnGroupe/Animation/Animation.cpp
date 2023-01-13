@@ -67,11 +67,11 @@ void Animation::Anime2Frames()
 	float _elapsed = clock->getElapsedTime().asSeconds();
 	if (_elapsed <= sf::seconds(initialSpeed).asSeconds())
 	{
-		sprite->setTexture(*texture);
+		sprite->SetTexture(*texture);
 	}
 	if (_elapsed >= sf::seconds(initialSpeed + speed).asSeconds())
 	{
-		sprite->setTexture(*texture1);
+		sprite->SetTexture(*texture1);
 	}
 	if (_elapsed >= sf::seconds(initialSpeed + 2 * speed).asSeconds())
 		clock->restart();
@@ -82,16 +82,16 @@ void Animation::Anime3Frames()
 	float _elapsed = clock->getElapsedTime().asSeconds();
 	if (_elapsed <= sf::seconds(initialSpeed).asSeconds())
 	{
-		sprite->setTexture(*texture);
+		sprite->SetTexture(*texture);
 	}
 	if (_elapsed >= sf::seconds(initialSpeed + speed).asSeconds() && _elapsed <= sf::seconds(initialSpeed + 2*speed).asSeconds())
 	{
-		sprite->setTexture(*texture1);
+		sprite->SetTexture(*texture1);
 		clock->restart();
 	}
 	if (_elapsed >= sf::seconds(initialSpeed + 3* speed).asSeconds())
 	{
-		sprite->setTexture(*texture2);
+		sprite->SetTexture(*texture2);
 		clock->restart();
 	}
 }
@@ -123,7 +123,7 @@ void Animation::AnimationUpdate(const int _frameNumber)
 }
 void Animation::SetScale(const sf::Vector2f& _vector)
 {
-	sprite->setScale(_vector);
+	sprite->SetScale(_vector);
 }
 #pragma endregion methods
 
