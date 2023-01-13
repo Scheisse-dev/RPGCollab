@@ -24,6 +24,7 @@ Chest::~Chest()
 int Chest::ChooseNumberTypeOfItems(int _quantityOfItemMax)
 {
 	int rand = std::rand() % _quantityOfItemMax + 1;
+	std::cout << "Number of items: " << std::endl;
 	std::cout << rand << std::endl;
 	return rand;
 }
@@ -38,6 +39,7 @@ std::vector<int> Chest::ChooseWichItems(int _numberTypeOfItem)
 	}
 	for (size_t i = 0; i < _numberTypeOfItem; i++)
 	{
+		std::cout << "Vector:" << std::endl;
 		std::cout << _items[i] << std::endl;
 	}
 
@@ -54,20 +56,28 @@ std::map<int, int> Chest::SetQuantityToItems(std::vector<int> _itemTypes)
 		 if (_itemTypes.data()[i] == _gold.ID() )
 		 {
 			 int _rand = std::rand() % 100 + 5;
-			 _quantity.insert(std::pair(_itemTypes.data()[i], _rand));
+			 _quantity.insert(std::pair(_itemTypes[i], _rand));
 		 }
 		 else
 		 {
 			 int rand = std::rand() % 3 + 1;
-			 _quantity.insert(std::pair(_itemTypes.data()[i], rand));
-		 }
-		 
+			 _quantity.insert(std::pair(_itemTypes[i], rand));
+		 }		 
 	 }
+
+
+	 std::cout << "Map: " << std::endl;
+	 for (std::pair<int, int> _pair : _quantity)
+	 {
+		 std::cout << "Key: " << _pair.first << " Value: " << _pair.second << std::endl;
+	 }
+
 	 return _quantity;
 }
 
 void Chest::SetDrop(int _quantityOfItemMax)
 {
+
 	SetQuantityToItems(ChooseWichItems(ChooseNumberTypeOfItems(_quantityOfItemMax)));
 	
 
