@@ -55,6 +55,9 @@
 #define POTION_HEAL_SCALE 0.5f
 #define COIN_SCALE 0.2f
 
+//Items
+#define QUANTITY_OF_ITEMS_TYPE 3
+
 //Starter Pack
 #define START_HEALPOTION_COUNT 0
 #define START_MANAPOTION_COUNT 0
