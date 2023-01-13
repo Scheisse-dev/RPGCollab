@@ -1,5 +1,5 @@
 #pragma once
-#include "../../GameObject/Manager/RPG_GameObjectManager.h"
+#include "../GameObject/Manager/RPG_GameObjectManager.h"
 #include <string>
 class RPG_Entity : public RPG_GameObjectManager
 {

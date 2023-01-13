@@ -7,6 +7,7 @@ class RPG_Game : public Window
 private:
 	bool isStarted = false;
 	class RPG_Samus* samus = nullptr;
+	class RPG_Mob* palpatine = nullptr;
 #pragma endregion
 #pragma region constructor
 public:
@@ -16,6 +17,7 @@ public:
 #pragma region methods
 private:
 	void Start();
+	void InitBackGroundGame();
 	void InitBackGround();
 #pragma endregion
 #pragma region override

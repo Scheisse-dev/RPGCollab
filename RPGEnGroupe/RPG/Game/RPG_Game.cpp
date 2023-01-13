@@ -6,6 +6,7 @@
 #include "../Samus/RPG_Samus.h"
 #include "../DataBase/DataBase.h"
 #include "../../UI/Manager/UIElementManager.h"
+#include "../RPG_Entity/RPG_Mob/RPG_Mob.h"
 #include <iostream>
 
 #pragma region constructor
@@ -28,7 +29,14 @@ void RPG_Game::Start()
 	isStarted = true;
 	samus = new RPG_Samus();
 	samus->SetWindowSize(sf::Vector2f(WIDTH, HEIGHT));
-	SetBackground("../Donnees/Backgroung_Game.png");
+	InitBackGroundGame();
+
+	palpatine = new RPG_Mob();
+	RPG_GameObjectManager::Register(palpatine);
+}
+void RPG_Game::InitBackGroundGame()
+{
+	SetBackground("../Donnees/Background_Game.png");
 	background->SetOrigin(sf::Vector2f(0, 0));
 	background->SetPosition(sf::Vector2f(0, 0));
 	background->SetScale(BACKGROUND_SCALE);

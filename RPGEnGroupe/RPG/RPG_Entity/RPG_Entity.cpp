@@ -9,7 +9,6 @@ RPG_Entity::RPG_Entity(const int _life, const char* _name)
 RPG_Entity::RPG_Entity(const RPG_Entity& _copy)
 {
 	life = _copy.life;
-	damage = _copy.damage;
 	name = _copy.name;
 }
 

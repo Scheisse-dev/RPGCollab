@@ -83,7 +83,8 @@ void GameObject::OnUpdate()
 void GameObject::OnDraw(Window* _window)
 {
 	_window->Draw(drawableSamus);
-	//_window->Draw(drawablePalpatine);
+	_window->Draw(drawablePalpatine);
+
 	_window->Draw(drawablePotionMana);
 	_window->Draw(drawablePotionHeal);
 	_window->Draw(drawablePotionManaText);

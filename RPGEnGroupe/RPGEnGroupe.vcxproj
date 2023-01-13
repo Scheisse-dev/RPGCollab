@@ -143,14 +143,14 @@
     <ClCompile Include="Item\Potion\Mana\PotionMana.cpp" />
     <ClCompile Include="Item\Potion\Heal\PotionHeal.cpp" />
     <ClCompile Include="RPGEnGroupe.cpp" />
-    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Entity.cpp" />
-    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.cpp" />
+    <ClCompile Include="RPG\RPG_Entity\RPG_Entity.cpp" />
+    <ClCompile Include="RPG\RPG_Entity\RPG_Player\RPG_Player.cpp" />
     <ClCompile Include="RPG\GameObject\GameObject.cpp" />
     <ClCompile Include="RPG\Menu\RPG_MainMenu.cpp" />
     <ClCompile Include="RPG\Game\RPG_Game.cpp" />
     <ClCompile Include="RPG\GameObject\Manager\RPG_GameObjectManager.cpp" />
     <ClCompile Include="RPG\Samus\RPG_Samus.cpp" />
-    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Mob\RPG_Mob.cpp" />
+    <ClCompile Include="RPG\RPG_Entity\RPG_Mob\RPG_Mob.cpp" />
     <ClCompile Include="Item\RPG_Item.cpp" />
     <ClCompile Include="UI\Button\RPG_Button.cpp" />
     <ClCompile Include="UI\Image\RPG_Image.cpp" />
@@ -174,8 +174,8 @@
     <ClInclude Include="Item\Potion\Mana\PotionMana.h" />
     <ClInclude Include="Item\Potion\Heal\PotionHeal.h" />
     <ClInclude Include="RPG\DataBase\DataBase.h" />
-    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Entity.h" />
-    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.h" />
+    <ClInclude Include="RPG\RPG_Entity\RPG_Entity.h" />
+    <ClInclude Include="RPG\RPG_Entity\RPG_Player\RPG_Player.h" />
     <ClInclude Include="RPG\GameObject\GameObject.h">
       <DeploymentContent>true</DeploymentContent>
     </ClInclude>
@@ -183,7 +183,7 @@
     <ClInclude Include="RPG\Game\RPG_Game.h" />
     <ClInclude Include="RPG\GameObject\Manager\RPG_GameObjectManager.h" />
     <ClInclude Include="RPG\Samus\RPG_Samus.h" />
-    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Mob\RPG_Mob.h" />
+    <ClInclude Include="RPG\RPG_Entity\RPG_Mob\RPG_Mob.h" />
     <ClInclude Include="Item\RPG_Item.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="UI\Button\RPG_Button.h" />

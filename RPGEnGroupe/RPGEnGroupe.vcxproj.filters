@@ -81,16 +81,19 @@
     <ClCompile Include="RPG\Samus\RPG_Samus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.cpp">
+    <ClCompile Include="RPG\RPG_Entity\RPG_Player\RPG_Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Entity.cpp">
+    <ClCompile Include="RPG\RPG_Entity\RPG_Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RPG\Entity\RPG_Entity\RPG_Mob\RPG_Mob.cpp">
+    <ClCompile Include="RPG\RPG_Entity\RPG_Mob\RPG_Mob.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Item\RPG_Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation\Animation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -173,16 +176,19 @@
     <ClInclude Include="RPG\Samus\RPG_Samus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Player\RPG_Player.h">
+    <ClInclude Include="RPG\RPG_Entity\RPG_Player\RPG_Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Entity.h">
+    <ClInclude Include="RPG\RPG_Entity\RPG_Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPG\Entity\RPG_Entity\RPG_Mob\RPG_Mob.h">
+    <ClInclude Include="RPG\RPG_Entity\RPG_Mob\RPG_Mob.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Item\RPG_Item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\Animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

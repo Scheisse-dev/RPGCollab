@@ -19,8 +19,6 @@ Chest::Chest()
 	drawableChest = sprite;
 }
 
-
-
 Chest::~Chest()
 {
 	delete sprite;
