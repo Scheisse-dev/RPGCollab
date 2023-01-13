@@ -15,7 +15,6 @@ RPG_Mob::RPG_Mob(const int _life, const int _damage, const char* _name, const ch
     SetScale();
     SetTexture();
     SetPosition();
-
 }
 
 RPG_Mob::RPG_Mob(const RPG_Mob& _copy) : RPG_Entity(_copy) 
