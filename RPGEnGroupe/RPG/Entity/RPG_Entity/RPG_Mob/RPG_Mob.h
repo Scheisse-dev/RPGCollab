@@ -1,6 +1,8 @@
 #pragma once
 #include "../RPG_Entity.h"
 
+//salut les boys, ça gaze ?
+
 class RPG_Player;
 class Animation;
 
@@ -22,7 +24,7 @@ private:
 #pragma region constructor/destructor
 public:
 	RPG_Mob() = default;
-	RPG_Mob(const int _life, const int _damage, const char* _name, const char* _path, const float _scale, sf::Sprite* _sprite, sf::Vector2f _position);
+	RPG_Mob(const int _life, const char* _name, const char* _path, const float _scale, sf::Sprite* _sprite, sf::Vector2f _position);
 	RPG_Mob(const RPG_Mob& _copy);
 	~RPG_Mob() override;
 #pragma endregion constructor/destructor

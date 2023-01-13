@@ -3,7 +3,7 @@
 #include "../RPG_Player/RPG_Player.h"
 
 #pragma region constructor/destructor
-RPG_Mob::RPG_Mob(const int _life, const int _damage, const char* _name, const char* _path, const float _scale, sf::Sprite* _sprite, sf::Vector2f _position) : RPG_Entity( _life, _damage, _name)
+RPG_Mob::RPG_Mob(const int _life, const char* _name, const char* _path, const float _scale, sf::Sprite* _sprite, sf::Vector2f _position) : RPG_Entity( _life, _name)
 {
     patern = new sf::Clock();
     speed = new sf::Clock();
@@ -12,10 +12,11 @@ RPG_Mob::RPG_Mob(const int _life, const int _damage, const char* _name, const ch
     path = _path;
     position = _position; 
 
+    
+
     SetScale();
     SetTexture();
     SetPosition();
-
 }
 
 RPG_Mob::RPG_Mob(const RPG_Mob& _copy) : RPG_Entity(_copy) 
@@ -93,9 +94,7 @@ int RPG_Mob::Life() const
 
 std::string RPG_Mob::Name() const
 {
-    return name;
-
-
+    return "name";
 }
 
 #pragma endregion override
