@@ -1,7 +1,7 @@
 #pragma once
-#include "../../../Object/Object.h"
+#include "../../GameObject/Manager/RPG_GameObjectManager.h"
 #include <string>
-class RPG_Entity : public Object
+class RPG_Entity : public RPG_GameObjectManager
 {
 #pragma region f/p
 private:

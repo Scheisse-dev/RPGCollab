@@ -1,8 +1,8 @@
 #pragma once
-#include "../RPG/GameObject/GameObject.h"
+#include "../RPG/GameObject/Manager/RPG_GameObjectManager.h"
 #include <SFML/Graphics.hpp>
 
-class Chest : public GameObject
+class Chest : public RPG_GameObjectManager
 {
 #pragma region f/p
 private:
