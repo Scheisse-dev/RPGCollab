@@ -43,5 +43,8 @@ public:
 	virtual sf::FloatRect GetGlobalBounds() const override;
 
 #pragma endregion
+
+	// Inherited via RPG_UIElement
+	virtual sf::Vector2f GetPosition() override;
 };
 

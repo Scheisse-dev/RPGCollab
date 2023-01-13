@@ -52,3 +52,8 @@ sf::FloatRect RPG_Button::GetGlobalBounds() const
 {
 	return image->GetGlobalBounds();
 }
+
+sf::Vector2f RPG_Button::GetPosition()
+{
+	return image->GetPosition();
+}
