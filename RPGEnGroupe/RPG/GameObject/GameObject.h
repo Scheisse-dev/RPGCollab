@@ -19,6 +19,7 @@ protected:
 	sf::Drawable* drawablePlatforme2 = nullptr;
 	sf::Drawable* drawablePlatforme3 = nullptr;
 	sf::Drawable* drawablePlatforme4 = nullptr;
+	sf::Drawable* drawableChest = nullptr;
 
 public:
 	GameObject();

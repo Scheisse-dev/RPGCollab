@@ -21,6 +21,7 @@ GameObject::GameObject(const GameObject& _copy)
 	drawablePlatforme2 = _copy.drawablePlatforme2;
 	drawablePlatforme3 = _copy.drawablePlatforme3;
 	drawablePlatforme4 = _copy.drawablePlatforme4;
+	drawableChest = _copy.drawableChest;
 }
 
 GameObject::~GameObject()
@@ -49,6 +50,8 @@ GameObject::~GameObject()
 	drawablePlatforme3 = nullptr;
 	delete drawablePlatforme4;
 	drawablePlatforme4 = nullptr;
+	delete drawableChest;
+	drawableChest = nullptr;
 }
 
 void GameObject::OnUpdate()
@@ -69,6 +72,7 @@ void GameObject::OnDraw(Window* _window)
 	_window->Draw(drawablePlatforme2);
 	_window->Draw(drawablePlatforme3);
 	_window->Draw(drawablePlatforme4);
+	_window->Draw(drawableChest);
 }
 
 void GameObject::OnCollisionEnter(GameObject* _object)

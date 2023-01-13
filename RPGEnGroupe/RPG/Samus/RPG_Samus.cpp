@@ -149,6 +149,21 @@ RPG_Samus::RPG_Samus()
 	drawableCoin = spriteCoin;
 #pragma endregion
 
+#pragma region Chest
+	spriteChest = new sf::Sprite();
+	textureChest = new sf::Texture();
+
+	if (textureChest->loadFromFile("../Donnees/chestClose.png"))
+	{
+		spriteChest->setTexture(*textureChest);
+	}
+
+	spriteChest->setOrigin(sf::Vector2f(0, 0));
+	spriteChest->setScale(sf::Vector2f(CHEST_SCALE, CHEST_SCALE));
+	spriteChest->setPosition(CHEST_POSITION);
+	drawableChest = spriteChest;
+#pragma endregion
+
 #pragma region Animation
 	samusAnimRight = new Animation(spriteSamus, "../Donnees/Samus/Run_Right_low.png", "../Donnees/Samus/Run_Right.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
 	samusAnimRight->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
@@ -193,6 +208,11 @@ RPG_Samus::~RPG_Samus()
 	spritePotionMana = nullptr;
 	delete texturePotionMana;
 	texturePotionMana = nullptr;
+
+	delete spriteChest;
+	spriteChest = nullptr;
+	delete textureChest;
+	textureChest = nullptr;
 }
 #pragma endregion
 
@@ -243,13 +263,11 @@ void RPG_Samus::OnUpdate()
 #pragma endregion
 
 #pragma region set position sol 
-	if (spriteSamus->getPosition().y <= HEIGHT - 125)
+	if (spriteSamus->getPosition().y <= HEIGHT - 140)
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(0, 0.05f));
 	}
 #pragma endregion
-
-	
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const
 {

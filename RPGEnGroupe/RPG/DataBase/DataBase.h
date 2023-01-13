@@ -18,11 +18,16 @@
 #define PLATFORME3_POSITION sf::Vector2f(400, 400)
 #define PLATFORME4_POSITION sf::Vector2f(1000, 100)
 
+//Chest
+#define CHEST_SCALE 0.4f
+
+#define CHEST_POSITION sf::Vector2f(1200, 45)
+
 //Player
 #define PLAYER_MAX_LIFE 100
 #define PLAYER_DAMAGE 10
 #define JUMP_FORCE 250
-#define SAMUS_POSITION sf::Vector2f(50, HEIGHT - 125)
+#define SAMUS_POSITION sf::Vector2f(50, HEIGHT - 140)
 #define SAMUS_SPEED 10
 #define SAMUS_SCALE 1.5f
 #define GRAVITY 1.0f

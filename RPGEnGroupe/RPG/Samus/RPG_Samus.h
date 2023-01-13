@@ -36,6 +36,9 @@ private:
 	sf::Sprite* spriteCoin = nullptr;
 	sf::Texture* textureCoin = nullptr;
 
+	sf::Sprite* spriteChest = nullptr;
+	sf::Texture* textureChest = nullptr;
+
 	sf::Vector2f windowSize = sf::Vector2f();
 
 	Animation* samusAnimRight = nullptr;
