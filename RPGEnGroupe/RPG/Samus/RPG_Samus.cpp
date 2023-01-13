@@ -160,7 +160,7 @@ RPG_Samus::RPG_Samus()
 	}
 
 	textHealRod->setFont(*font);
-	textHealRod->setString("90");
+	textHealRod->setString("100");
 	textHealRod->setCharacterSize(SIZE_TEXT);
 	textHealRod->setFillColor(COLOR_TEXT);
 	textHealRod->setPosition(TEXT_HEAL_ROD_POSITION);
@@ -308,7 +308,7 @@ void RPG_Samus::OnUpdate()
 	{
 		std::cout << "Mana !" << std::endl;
 	}
-	if (Input::IsKeyDown(sf::Keyboard::F))
+	if (spriteSamus->getGlobalBounds().intersects(spriteChest->getGlobalBounds()) && Input::IsKeyDown(sf::Keyboard::F))
 	{
 		std::cout << "Open chest !" << std::endl;
 	}

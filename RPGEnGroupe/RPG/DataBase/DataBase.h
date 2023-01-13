@@ -98,4 +98,4 @@
 #define CHEST_SIZE 0.1f  
 #pragma endregion
 
-
+#define LABEL_FONT ""
