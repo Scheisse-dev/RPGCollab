@@ -82,22 +82,6 @@ void RPG_Mob::Move()
     }
     if(_boucle >= 6.f)
         speed->restart();
-
-    CollisionEnter(sprite, )
-}
-void RPG_Mob::CollisionEnter(sf::Sprite* _spritePlayer, RPG_Player _player)
-{
-    float _invisibility = clock.getElapsedTime().asSeconds();
-
-    if (sprite->getGlobalBounds().intersects(_spritePlayer->getGlobalBounds()))
-    {
-        _player.life - MOB_DAMAGE;
-        clock.restart();
-    }
-    if (_invisibility <= 3.0f)
-    {
-        return;
-    }
 }
 #pragma endregion methods
 #pragma region override
@@ -106,10 +90,6 @@ int RPG_Mob::Life() const
     return MOB_MAX_LIFE;
 }
 
-int RPG_Mob::Damage() const
-{
-    return MOB_DAMAGE;
-}
 
 std::string RPG_Mob::Name() const
 {

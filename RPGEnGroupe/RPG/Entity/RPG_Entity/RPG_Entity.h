@@ -22,7 +22,6 @@ public:
 #pragma region methods
 public:
 	virtual int Life() const = 0 ;
-	virtual int Damage() const = 0;
 	virtual std::string Name() const = 0;
 
 

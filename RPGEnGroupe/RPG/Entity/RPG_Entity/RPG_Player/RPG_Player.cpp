@@ -22,10 +22,6 @@ int RPG_Player::Life() const
 	return PLAYER_MAX_LIFE;
 }
 
-int RPG_Player::Damage() const
-{
-	return PLAYER_DAMAGE;
-}
 
 std::string RPG_Player::Name() const
 {
