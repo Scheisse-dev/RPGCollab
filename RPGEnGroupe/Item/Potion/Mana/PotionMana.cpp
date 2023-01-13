@@ -1,6 +1,6 @@
 #include "PotionMana.h"
 
-PotionMana::PotionMana(const char* _name, const int _value) : RPG_Item(_name, _value) {}
+PotionMana::PotionMana(int _id, const int _value) : RPG_Item(_id, _value) {}
 
 PotionMana::PotionMana(const PotionMana& _copy) {}
 

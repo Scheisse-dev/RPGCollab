@@ -1,6 +1,6 @@
 #include "PotionHeal.h"
 
-PotionHeal::PotionHeal(const char* _name, const int _value) : RPG_Item(_name, _value) {}
+PotionHeal::PotionHeal(int _id, const int _value) : RPG_Item(_id, _value) {}
 
 PotionHeal::PotionHeal(const PotionHeal& _copy) : RPG_Item( _copy) {}
 

@@ -9,7 +9,7 @@ private:
 #pragma region constructor/destructor
 public:
 	PotionMana() = default;
-	PotionMana(const char* _name, const int _value);
+	PotionMana(int _id, const int _value);
 	PotionMana(const PotionMana& _copy);
 	~PotionMana() override;
 #pragma endregion constructor/destructor

@@ -9,7 +9,7 @@ private:
 #pragma region constructor/destructor
 public:
 	PotionHeal() = default;
-	PotionHeal(const char* _name, const int _value);
+	PotionHeal(int _id, const int _value);
 	PotionHeal(const PotionHeal& _copy);
 	~PotionHeal() override;
 

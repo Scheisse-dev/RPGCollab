@@ -10,7 +10,7 @@ private:
 #pragma region constructor/destructor
 public:
 	RPG_Item() = default;
-	RPG_Item(const char* _name, const int _value);
+	RPG_Item(int _id, const int _value);
 	RPG_Item(const RPG_Item& _copy);
 	virtual ~RPG_Item() override;
 

@@ -9,7 +9,7 @@ private:
 #pragma region constructor/destructor
 public:
 	Gold() = default;
-	Gold(const char* _name, const int _value);
+	Gold(int _id, const int _value);
 	Gold(const Gold& _copy);
 	~Gold() override;
 #pragma endregion constructor/destructor
