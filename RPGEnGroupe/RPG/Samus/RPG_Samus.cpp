@@ -55,7 +55,7 @@ RPG_Samus::RPG_Samus()
 	textMana = new RPG_Label(this, "../Donnees/Fonts/Ubuntu-Title.ttf");
 
 	textMana->SetFont(*font);
-	textMana->SetText(("x" + std::to_string(inventory.ManaPotionCount())).c_str());
+	textMana->SetText(std::to_string(inventory.ManaPotionCount()).c_str());
 	textMana->SetCharacterSize(SIZE_TEXT);
 	textMana->SetColor(COLOR_TEXT);
 	textMana->SetPosition(TEXT_MANA_POSITION);
@@ -70,7 +70,7 @@ RPG_Samus::RPG_Samus()
 	textHeal = new RPG_Label(this, "../Donnees/Fonts/Ubuntu-Title.ttf");
 
 	textHeal->SetFont(*font);
-	textHeal->SetText(("x" + std::to_string(inventory.HealPotionCount())).c_str());
+	textHeal->SetText(std::to_string(inventory.HealPotionCount()).c_str());
 	textHeal->SetCharacterSize(SIZE_TEXT);
 	textHeal->SetColor(COLOR_TEXT);
 	textHeal->SetPosition(TEXT_HEAL_POSITION);
@@ -241,5 +241,6 @@ void RPG_Samus::SetWindowSize(const sf::Vector2f& _size)
 }
 void RPG_Samus::OnDraw()
 {
+	Samus->Draw(this);
 }
 #pragma endregion
