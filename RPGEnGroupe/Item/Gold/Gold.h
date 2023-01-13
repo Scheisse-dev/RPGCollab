@@ -21,6 +21,7 @@ public:
 public:
 	virtual int ID() const override;
 	virtual int Value() const override;
+	virtual int Price() const override;
 
 #pragma endregion override
 #pragma region operator
@@ -28,10 +29,6 @@ public:
 
 #pragma endregion operator
 
-
-
-	// Inherited via RPG_Item
-	virtual int Price() const override;
 
 };
 

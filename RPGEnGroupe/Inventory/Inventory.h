@@ -23,8 +23,8 @@ public:
 #pragma region methods
 public:
 
-	void RemoveItem(std::string _type, int _number);
-	void AddItem(std::string _type, int _number);
+	void RemoveItem(int _id, int _number);
+	void AddItem(int _id, int _number);
 
 
 	int HealPotionCount() const;

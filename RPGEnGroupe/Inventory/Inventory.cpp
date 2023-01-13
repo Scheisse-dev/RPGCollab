@@ -7,49 +7,49 @@ Inventory::~Inventory()
 	
 }
 
-void Inventory::RemoveItem(std::string _type, int _number)
+void Inventory::RemoveItem(int _id, int _number)
 {
 	Gold _goldItem;
 	PotionHeal _healItem;
 	PotionMana _manaItem;
-	if (_type == _healItem.Name() && healPotionCount != 0)
+	if (_id == _healItem.ID() && healPotionCount != 0)
 	{
 		healPotionCount -= _number;
 	}
-	else if (_type == _manaItem.Name() && manaPotionCount != 0)
+	else if (_id == _manaItem.ID() && manaPotionCount != 0)
 	{
 		manaPotionCount -= _number;
 	}
-	else if (_type == _goldItem.Name() && goldCount != 0)
+	else if (_id == _goldItem.ID() && goldCount != 0)
 	{
 		goldCount -= _number;
 	}
 	else
 	{
-		std::cout << "[Inventory] => nom de la ressource demande n'est pas valide ou stock egale a 0 !";
+		std::cout << "[Inventory] => id de la ressource demande n'est pas valide ou stock egale a 0 !";
 	}
 }
 
-void Inventory::AddItem(std::string _type, int _number)
+void Inventory::AddItem(int _id, int _number)
 {
 	Gold _goldItem;
 	PotionHeal _healItem;
 	PotionMana _manaItem;
-	if (_type == _healItem.Name())
+	if (_id == _healItem.ID())
 	{
 		healPotionCount += _number;
 	}
-	else if (_type == _manaItem.Name())
+	else if (_id == _manaItem.ID())
 	{
 		manaPotionCount += _number;
 	}
-	else if (_type == _goldItem.Name())
+	else if (_id == _goldItem.ID())
 	{
 		goldCount += _number;
 	}
 	else
 	{
-		std::cout << "[Inventory] => nom de la ressource demande n'est pas valide !";
+		std::cout << "[Inventory] => id de la ressource demande n'est pas valide !";
 	}
 }
 
