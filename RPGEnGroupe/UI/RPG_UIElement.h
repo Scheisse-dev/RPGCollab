@@ -20,7 +20,7 @@ public:
 #pragma endregion constructor
 #pragma region methods
 public:
-	virtual void GetPosition() = 0;
+	virtual sf::Vector2f GetPosition() = 0;
 	virtual void SetPosition(const sf::Vector2f& _position) = 0;
 	virtual void SetScale(const sf::Vector2f& _scale) = 0;
 	virtual void Draw(Window* _window) = 0;

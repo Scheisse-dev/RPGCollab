@@ -32,6 +32,6 @@ public:
 #pragma endregion override
 
 	// Inherited via RPG_UIElement
-	virtual void GetPosition() override;
+	virtual sf::Vector2f GetPosition() override;
 };
 

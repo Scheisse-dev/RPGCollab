@@ -31,6 +31,6 @@ public:
 	virtual sf::FloatRect GetGlobalBounds() const override;
 
 	// Inherited via RPG_UIElement
-	virtual void GetPosition() override;
+	virtual sf::Vector2f GetPosition() override;
 };
 
