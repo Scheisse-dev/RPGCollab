@@ -206,9 +206,6 @@ RPG_Samus::~RPG_Samus()
 //}
 void RPG_Samus::OnUpdate()
 {
-	/*if (isDead)
-		return;*/
-	
 #pragma region touche move
 	if (Input::IsKeyDown(sf::Keyboard::D))
 	{
@@ -252,16 +249,6 @@ void RPG_Samus::OnUpdate()
 	}
 #pragma endregion
 
-#pragma region MyRegion
-	
-#pragma endregion
-
-
-	//pas plus haut que la fenetre
-	/*if (spriteSamus->getPosition().y <= 0)
-	{
-		spriteSamus->setPosition(spriteSamus->getPosition() - sf::Vector2f(0, 0.05f));
-	}*/
 	
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const
