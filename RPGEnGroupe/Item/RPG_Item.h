@@ -19,6 +19,7 @@ public:
 public:
 	virtual int ID() const = 0;
 	virtual int Value() const = 0;
+	virtual int Price() const = 0;
 #pragma endregion methods
 #pragma region override
 public:

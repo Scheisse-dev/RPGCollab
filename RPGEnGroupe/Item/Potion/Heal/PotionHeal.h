@@ -22,6 +22,7 @@ public:
 public:
 	virtual int ID() const override;
 	virtual int Value() const override;
+	virtual int Price() const override;
 
 #pragma endregion override
 #pragma region operator

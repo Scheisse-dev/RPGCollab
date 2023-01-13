@@ -15,3 +15,13 @@ int Gold::Value() const
 {
     return 1;
 }
+
+int Gold::Price() const
+{
+    return 0;
+}
+
+int Gold::Price() const
+{
+    return 0 ;
+}

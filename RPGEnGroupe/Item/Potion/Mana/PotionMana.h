@@ -28,5 +28,9 @@ public:
 
 #pragma endregion operator
 
+
+	// Inherited via RPG_Item
+	virtual int Price() const override;
+
 };
 

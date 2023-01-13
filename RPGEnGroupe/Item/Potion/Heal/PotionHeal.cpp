@@ -16,4 +16,10 @@ int PotionHeal::ID() const
 int PotionHeal::Value() const
 {
     return HEAL_POTION;
+
+}
+
+int PotionHeal::Price() const
+{
+    return 20;
 }

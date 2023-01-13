@@ -15,3 +15,8 @@ int PotionMana::Value() const
 {
     return MANA_POTION;
 }
+
+int PotionMana::Price() const
+{
+    return 25;
+}
