@@ -12,11 +12,17 @@ private:
 
 	sf::Font* font = nullptr;
 
+	sf::Sprite* spritePlatforme1 = nullptr;
+	sf::Texture* texturePlatforme1 = nullptr;
+	sf::Sprite* spritePlatforme2 = nullptr;
+	sf::Texture* texturePlatforme2 = nullptr;
+	sf::Sprite* spritePlatforme3 = nullptr;
+	sf::Texture* texturePlatforme3 = nullptr;
+	sf::Sprite* spritePlatforme4 = nullptr;
+	sf::Texture* texturePlatforme4 = nullptr;
+
 	sf::Sprite* spriteSamus = nullptr;
 	sf::Texture* textureSamus = nullptr;
-
-	sf::Sprite* spritePalpatine = nullptr;
-	sf::Texture* texturePalpatine = nullptr;
 
 	sf::Text* textMana = nullptr;
 	sf::Sprite* spritePotionMana = nullptr;

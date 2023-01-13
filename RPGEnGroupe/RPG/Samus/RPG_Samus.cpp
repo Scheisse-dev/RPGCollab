@@ -9,15 +9,63 @@
 #pragma region constructor
 RPG_Samus::RPG_Samus()
 {
-	//inventory
 	Inventory inventory = Inventory();
 
-	//Font
+#pragma region font
 	font = new sf::Font();
 	if (!font->loadFromFile("../Donnees/Fonts/Ubuntu-Title.ttf"))
 		return;
+#pragma endregion
 
-	//Samus
+#pragma region platforme
+	spritePlatforme1 = new sf::Sprite();
+	texturePlatforme1 = new sf::Texture();
+	spritePlatforme2 = new sf::Sprite();
+	texturePlatforme2 = new sf::Texture();
+	spritePlatforme3 = new sf::Sprite();
+	texturePlatforme3 = new sf::Texture();
+	spritePlatforme4 = new sf::Sprite();
+	texturePlatforme4 = new sf::Texture();
+
+	if (texturePlatforme1->loadFromFile("../Donnees/Sol.png"))
+	{
+		spritePlatforme1->setTexture(*texturePlatforme1);
+	}
+	if (texturePlatforme2->loadFromFile("../Donnees/Sol.png"))
+	{
+		spritePlatforme2->setTexture(*texturePlatforme2);
+	}
+	if (texturePlatforme3->loadFromFile("../Donnees/Sol.png"))
+	{
+		spritePlatforme3->setTexture(*texturePlatforme1);
+	}
+	if (texturePlatforme4->loadFromFile("../Donnees/Sol.png"))
+	{
+		spritePlatforme4->setTexture(*texturePlatforme1);
+	}
+
+	spritePlatforme1->setOrigin(sf::Vector2f(0, 0));
+	spritePlatforme1->setScale(sf::Vector2f(PLATFORME1_SCALE, PLATFORME1_SCALE));
+	spritePlatforme1->setPosition(PLATFORME1_POSITION);
+	drawablePlatforme1 = spritePlatforme1;
+
+	spritePlatforme2->setOrigin(sf::Vector2f(0, 0));
+	spritePlatforme2->setScale(sf::Vector2f(PLATFORME2_SCALE, PLATFORME2_SCALE));
+	spritePlatforme2->setPosition(PLATFORME2_POSITION);
+	drawablePlatforme2 = spritePlatforme2;
+
+	spritePlatforme3->setOrigin(sf::Vector2f(0, 0));
+	spritePlatforme3->setScale(sf::Vector2f(PLATFORME3_SCALE, PLATFORME3_SCALE));
+	spritePlatforme3->setPosition(PLATFORME3_POSITION);
+	drawablePlatforme3 = spritePlatforme3;
+
+	spritePlatforme4->setOrigin(sf::Vector2f(0, 0));
+	spritePlatforme4->setScale(sf::Vector2f(PLATFORME4_SCALE, PLATFORME4_SCALE));
+	spritePlatforme4->setPosition(PLATFORME4_POSITION);
+	drawablePlatforme4 = spritePlatforme4;
+#pragma endregion
+
+#pragma region samus
 	spriteSamus = new sf::Sprite();
 	textureSamus = new sf::Texture();
 
@@ -30,22 +78,9 @@ RPG_Samus::RPG_Samus()
 	spriteSamus->setScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 	spriteSamus->setPosition(SAMUS_POSITION);
 	drawableSamus = spriteSamus;
+#pragma endregion
 
-	//Palpatine
-	spritePalpatine = new sf::Sprite();
-	texturePalpatine = new sf::Texture();
-
-	if (texturePalpatine->loadFromFile("../Donnees/Palpatine/Dab.png"))
-	{
-		spritePalpatine->setTexture(*texturePalpatine);
-	}
-
-	spritePalpatine->setOrigin(sf::Vector2f(0, 0));
-	spritePalpatine->setScale(sf::Vector2f(PALPATINE_SCALE, PALPATINE_SCALE));
-	spritePalpatine->setPosition(PALPATINE_POSITION);
-	drawablePalpatine = spritePalpatine;
-
-	//Potion Mana
+#pragma region Potion Mana
 	spritePotionMana = new sf::Sprite();
 	texturePotionMana = new sf::Texture();
 	textMana = new sf::Text();
@@ -66,8 +101,9 @@ RPG_Samus::RPG_Samus()
 	spritePotionMana->setScale(sf::Vector2f(POTION_MANA_SCALE, POTION_MANA_SCALE));
 	spritePotionMana->setPosition(POTION_MANA_POSITION);
 	drawablePotionMana = spritePotionMana;
+#pragma endregion
 
-	//Potion Heal
+#pragma region Potion Heal
 	spritePotionHeal = new sf::Sprite();
 	texturePotionHeal = new sf::Texture();
 	textHeal = new sf::Text();
@@ -88,8 +124,9 @@ RPG_Samus::RPG_Samus()
 	spritePotionHeal->setScale(sf::Vector2f(POTION_HEAL_SCALE, POTION_HEAL_SCALE));
 	spritePotionHeal->setPosition(POTION_HEAL_POSITION);
 	drawablePotionHeal = spritePotionHeal;
+#pragma endregion
 
-	//coin
+#pragma region Coin
 	spriteCoin = new sf::Sprite();
 	textureCoin = new sf::Texture();
 	textCoin = new sf::Text();
@@ -109,26 +146,43 @@ RPG_Samus::RPG_Samus()
 	spriteCoin->setOrigin(sf::Vector2f(0, 0));
 	spriteCoin->setScale(sf::Vector2f(COIN_SCALE, COIN_SCALE));
 	spriteCoin->setPosition(COIN_POSITION);
-	drawableCoin= spriteCoin;
+	drawableCoin = spriteCoin;
+#pragma endregion
 
-	//animation
+#pragma region Animation
 	samusAnimRight = new Animation(spriteSamus, "../Donnees/Samus/Run_Right_low.png", "../Donnees/Samus/Run_Right.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
 	samusAnimRight->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
 
 	samusAnimLeft = new Animation(spriteSamus, "../Donnees/Samus/Run_Left_low.png", "../Donnees/Samus/Run_left.png", SAMUS_ANIMATION_INITIAL_SPEED, SAMUS_ANIMATION_SPEED);
 	samusAnimLeft->SetScale(sf::Vector2f(SAMUS_SCALE, SAMUS_SCALE));
+#pragma endregion
 }
 RPG_Samus::~RPG_Samus()
 {
+	delete spritePlatforme1;
+	spritePlatforme1 = nullptr;
+	delete texturePlatforme1;
+	texturePlatforme1 = nullptr;
+
+	delete spritePlatforme2;
+	spritePlatforme2 = nullptr;
+	delete texturePlatforme2;
+	texturePlatforme2 = nullptr;
+
+	delete spritePlatforme3;
+	spritePlatforme3 = nullptr;
+	delete texturePlatforme3;
+	texturePlatforme3 = nullptr;
+
+	delete spritePlatforme4;
+	spritePlatforme4 = nullptr;
+	delete texturePlatforme4;
+	texturePlatforme4 = nullptr;
+
 	delete spriteSamus;
 	spriteSamus = nullptr;
 	delete textureSamus;
 	textureSamus = nullptr;
-
-	delete spritePalpatine;
-	spritePalpatine = nullptr;
-	delete texturePalpatine;
-	texturePalpatine = nullptr;
 
 	delete spritePotionHeal;
 	spritePotionHeal = nullptr;
@@ -155,8 +209,7 @@ void RPG_Samus::OnUpdate()
 	/*if (isDead)
 		return;*/
 	
-
-	
+#pragma region touche move
 	if (Input::IsKeyDown(sf::Keyboard::D))
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(SAMUS_SPEED, 0));
@@ -171,6 +224,9 @@ void RPG_Samus::OnUpdate()
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() - sf::Vector2f(0, JUMP_FORCE));
 	}
+#pragma endregion
+
+#pragma region touche Item
 	if (Input::IsKeyDown(sf::Keyboard::A))
 	{
 		std::cout << "Heal !" << std::endl;
@@ -183,11 +239,29 @@ void RPG_Samus::OnUpdate()
 	{
 		std::cout << "Open chest !" << std::endl;
 	}
-	//position au sol
+	if (Input::IsKeyDown(sf::Keyboard::B))
+	{
+		std::cout << "Shop !" << std::endl;
+	}
+#pragma endregion
+
+#pragma region set position sol 
 	if (spriteSamus->getPosition().y <= HEIGHT - 125)
 	{
 		spriteSamus->setPosition(spriteSamus->getPosition() + sf::Vector2f(0, 0.05f));
 	}
+#pragma endregion
+
+#pragma region MyRegion
+	
+#pragma endregion
+
+
+	//pas plus haut que la fenetre
+	/*if (spriteSamus->getPosition().y <= 0)
+	{
+		spriteSamus->setPosition(spriteSamus->getPosition() - sf::Vector2f(0, 0.05f));
+	}*/
 	
 }
 sf::FloatRect RPG_Samus::GetGlobalBounds() const

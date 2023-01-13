@@ -1,15 +1,27 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-#define WIDTH 900
-#define HEIGHT 500
+#define WIDTH 1500
+#define HEIGHT 800
+#define BACKGROUND_SCALE sf::Vector2f(3.0f, 2.4f)
 
 #define MAIN_MENU "main menu"
+
+//platforme
+#define PLATFORME1_SCALE 0.3f
+#define PLATFORME2_SCALE 0.3f
+#define PLATFORME3_SCALE 0.3f
+#define PLATFORME4_SCALE 0.3f
+
+#define PLATFORME1_POSITION sf::Vector2f(50, 550)
+#define PLATFORME2_POSITION sf::Vector2f(700, 275)
+#define PLATFORME3_POSITION sf::Vector2f(400, 400)
+#define PLATFORME4_POSITION sf::Vector2f(1000, 100)
 
 //Player
 #define PLAYER_MAX_LIFE 100
 #define PLAYER_DAMAGE 10
-#define JUMP_FORCE 100
+#define JUMP_FORCE 250
 #define SAMUS_POSITION sf::Vector2f(50, HEIGHT - 125)
 #define SAMUS_SPEED 10
 #define SAMUS_SCALE 1.5f

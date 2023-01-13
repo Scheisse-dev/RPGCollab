@@ -15,6 +15,10 @@ protected:
 	sf::Drawable* drawablePotionHealText = nullptr;
 	sf::Drawable* drawableCoin = nullptr;
 	sf::Drawable* drawableCoinText = nullptr;
+	sf::Drawable* drawablePlatforme1 = nullptr;
+	sf::Drawable* drawablePlatforme2 = nullptr;
+	sf::Drawable* drawablePlatforme3 = nullptr;
+	sf::Drawable* drawablePlatforme4 = nullptr;
 
 public:
 	GameObject();

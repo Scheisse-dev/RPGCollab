@@ -31,7 +31,7 @@ void RPG_Game::Start()
 	SetBackground("../Donnees/Backgroung_Game.png");
 	background->SetOrigin(sf::Vector2f(0, 0));
 	background->SetPosition(sf::Vector2f(0, 0));
-	background->SetScale(sf::Vector2f(1.8f, 1.5f));
+	background->SetScale(BACKGROUND_SCALE);
 }
 void RPG_Game::InitBackGround()
 {
