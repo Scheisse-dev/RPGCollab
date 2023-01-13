@@ -10,7 +10,7 @@ Chest::Chest()
 {
 	sprite = new sf::Sprite();
 	texture = new sf::Texture();
-	if (texture->loadFromFile("D:/Github/Yoni/MyThirdProject/SFML1stProject/FlappyBird/flappy.png"))
+	if (texture->loadFromFile("../Donnees/chestClose.png"))
 	{
 		sprite->setTexture(*texture);
 	}
