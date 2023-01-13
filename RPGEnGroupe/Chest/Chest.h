@@ -6,8 +6,8 @@ class Chest : public Object
 {
 #pragma region f/p
 private:
-	sf::Texture* texture = nullptr;
-	sf::Sprite* sprite = nullptr;
+	
+
 protected :
 	bool isOpen = false;
 
@@ -19,10 +19,11 @@ public:
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
-	void SetPosition(float _width, float _height);
-	void SetScale(sf::Vector2f _size);
-	void Update(); 
-	void SetDrop();
+
+	int ChooseNumberTypeOfItems(int _quantityOfItemMax);
+	std::vector<int> ChooseWichItems(int _numberTypeOfItem);
+	std::map<int, int> SetQuantityToItems(std::vector<int> _itemTypes);
+	void SetDrop(int _quantityOfItemMax);
 	bool IsOpen();
 
 #pragma endregion methods
