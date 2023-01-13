@@ -7,7 +7,7 @@
 
 #define MAIN_MENU "main menu"
 
-//platforme
+#pragma region Platforme
 #define PLATFORME1_SCALE 0.3f
 #define PLATFORME2_SCALE 0.3f
 #define PLATFORME3_SCALE 0.3f
@@ -16,14 +16,10 @@
 #define PLATFORME1_POSITION sf::Vector2f(50, 550)
 #define PLATFORME2_POSITION sf::Vector2f(700, 275)
 #define PLATFORME3_POSITION sf::Vector2f(400, 400)
-#define PLATFORME4_POSITION sf::Vector2f(1000, 100)
+#define PLATFORME4_POSITION sf::Vector2f(1000, 100)  
+#pragma endregion
 
-//Chest
-#define CHEST_SCALE 0.4f
-
-#define CHEST_POSITION sf::Vector2f(1200, 45)
-
-//Player
+#pragma region Player
 #define PLAYER_MAX_LIFE 100
 #define PLAYER_DAMAGE 10
 #define JUMP_FORCE 250
@@ -33,16 +29,18 @@
 #define GRAVITY 1.0f
 
 #define MANA_PER_ATTACK 5
-#define MANA_REGEN 1
+#define MANA_REGEN 1  
+#pragma endregion
 
-//Mob
+#pragma region Mob
 #define MOB_MAX_LIFE 50
 #define MOB_DAMAGE 15
 #define PALPATINE_POSITION sf::Vector2f(WIDTH-125, HEIGHT - 125)
 #define PALPATINE_SCALE 0.8f
-#define MOB_SPEED 10
+#define MOB_SPEED 10  
+#pragma endregion
 
-//Potion
+#pragma region Potions and Coins
 #define HEAL_POTION 5
 #define MANA_POTION 5
 
@@ -70,26 +68,34 @@
 #define POTION_MANA_ROD_SCALE 0.07f
 #define POTION_HEAL_ROD_SCALE 0.02f
 
-#define COIN_SCALE 0.2f
+#define COIN_SCALE 0.2f  
+#pragma endregion
 
-//Items
-#define QUANTITY_OF_ITEMS_TYPE 3
+#pragma region Item
+#define QUANTITY_OF_ITEMS_TYPE 3  
+#pragma endregion
 
-//Starter Pack
+#pragma region Starter Pack
 #define START_HEALPOTION_COUNT 0
 #define START_MANAPOTION_COUNT 0
-#define START_GOLD_COUNT 0
+#define START_GOLD_COUNT 0  
+#pragma endregion
 
-//Animation
+#pragma region Animation
 #define SAMUS_ANIMATION_INITIAL_SPEED 0.1f
 #define SAMUS_ANIMATION_SPEED 0.1f
 #define MOB_ANIMATION_INITIAL_SPEED 0.1f
 #define MOB_ANIMATION_SPEED 0.1f
 #define CHEST_ANIMATION_INITIAL_SPEED 0.1f
-#define CHEST_ANIMATION_SPEED 0.1f
+#define CHEST_ANIMATION_SPEED 0.1f  
+#pragma endregion
 
-//Chest
-#define CHEST_SIZE 0.1f
+#pragma region Chest
+#define CHEST_SCALE 0.4f
 
-#define LABEL_FONT ""
+#define CHEST_POSITION sf::Vector2f(1200, 45)
+
+#define CHEST_SIZE 0.1f  
+#pragma endregion
+
 
