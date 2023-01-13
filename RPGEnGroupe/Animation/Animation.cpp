@@ -1,7 +1,8 @@
 #include "Animation.h"
+#include "../UI/Image/RPG_Image.h"
 
 #pragma region constructor/destructor
-Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const float _initialSpeed, const float _speed)
+Animation::Animation(RPG_Image* _sprite, const char* _frame1, const char* _frame2, const float _initialSpeed, const float _speed)
 {
 	clock = new sf::Clock;
 	texture = new sf::Texture;
@@ -20,7 +21,7 @@ Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _fram
 
 }
 
-Animation::Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const char* _frame3, const float _initialSpeed, const float _speed)
+Animation::Animation(RPG_Image* _sprite, const char* _frame1, const char* _frame2, const char* _frame3, const float _initialSpeed, const float _speed)
 {
 	clock = new sf::Clock;
 	texture = new sf::Texture;

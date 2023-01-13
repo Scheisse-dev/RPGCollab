@@ -6,7 +6,7 @@ class Animation
 {
 #pragma region f/p
 private:
-	sf::Sprite* sprite = nullptr;
+	class RPG_Image* sprite = nullptr;
 	sf::Texture* texture = nullptr;
 	sf::Texture* texture1 = nullptr;
 	sf::Texture* texture2 = nullptr;
@@ -20,8 +20,8 @@ public:
 #pragma endregion f/p
 #pragma region constructor/destructor
 public:
-	Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2,const float _initialSpeed, const float _speed);
-	Animation(sf::Sprite* _sprite, const char* _frame1, const char* _frame2, const char* _frame3,const float _initialSpeed, const float _speed);
+	Animation(class RPG_Image* _sprite, const char* _frame1, const char* _frame2,const float _initialSpeed, const float _speed);
+	Animation(class RPG_Image* _sprite, const char* _frame1, const char* _frame2, const char* _frame3,const float _initialSpeed, const float _speed);
 	~Animation(); 
 #pragma endregion constructor/destructor
 #pragma region methods
