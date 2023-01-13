@@ -79,3 +79,8 @@ sf::FloatRect RPG_Label::GetGlobalBounds() const
 {
 	return text->getGlobalBounds();
 }
+
+void RPG_Label::GetPosition()
+{
+	text->getPosition();
+}

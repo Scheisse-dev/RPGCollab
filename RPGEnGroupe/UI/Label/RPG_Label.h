@@ -30,5 +30,8 @@ public:
 	virtual void SetOrigin(const sf::Vector2f& _origin) override;
 	virtual sf::FloatRect GetGlobalBounds() const override;
 #pragma endregion override
+
+	// Inherited via RPG_UIElement
+	virtual void GetPosition() override;
 };
 

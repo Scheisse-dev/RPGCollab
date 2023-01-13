@@ -62,4 +62,8 @@ sf::FloatRect RPG_Image::GetGlobalBounds() const
 {
     return sprite->getGlobalBounds();
 }
+void RPG_Image::GetPosition()
+{
+    sprite->getPosition();
+}
 #pragma endregion override
